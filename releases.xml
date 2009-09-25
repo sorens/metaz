@@ -12,6 +12,19 @@
 		<lastBuildDate>Sat, 05 Sep 2009 17:53:28 +0200</lastBuildDate>
     <atom:link href="http://griff.github.com/metaz/releases.xml" rel="self" type="application/rss+xml"/>
 		<item>
+			<title>Version 0.3a</title>
+			<sparkle:releaseNotesLink>http://griff.github.com/metaz/release-notes.html#version-0.3a</sparkle:releaseNotesLink>
+			<pubDate>Fri, 25 Sep 2009 11:29:17 +0200</pubDate>
+			<enclosure
+				url="http://cloud.github.com/downloads/griff/metaz/MetaZ-0.3a.zip"
+				sparkle:version="e862a78"
+				sparkle:shortVersionString="0.3a"
+				type="application/octet-stream"
+				length="910106"
+				sparkle:dsaSignature="MC0CFQCJKcFdD3sA+sI3gOKSn8priLok8QIUL3RIFRAokojeBgqarIgKZ23keH8="
+			/>
+		</item>
+		<item>
 			<title>Version 0.2a</title>
 			<sparkle:releaseNotesLink>http://griff.github.com/metaz/release-notes.html#version-0.2a</sparkle:releaseNotesLink>
 			<pubDate>Sat, 05 Sep 2009 17:53:28 +0200</pubDate>
