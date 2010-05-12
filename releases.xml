@@ -8,9 +8,22 @@
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 
     <language>en</language>
-		<pubDate>Mon, 21 Dec 2009 04:28:56 +0100</pubDate>
-		<lastBuildDate>Mon, 21 Dec 2009 04:28:56 +0100</lastBuildDate>
+		<pubDate>Ons, 12 Maj 2010 06:14:31 +0200</pubDate>
+		<lastBuildDate>Ons, 12 Maj 2010 06:14:31 +0200</lastBuildDate>
     <atom:link href="http://griff.github.com/metaz/releases.xml" rel="self" type="application/rss+xml"/>
+		<item>
+			<title>Version 1.0a6</title>
+			<sparkle:releaseNotesLink>http://griff.github.com/metaz/release-notes.html#version-1.0a6</sparkle:releaseNotesLink>
+			<pubDate>Ons, 12 Maj 2010 06:14:31 +0200</pubDate>
+			<enclosure
+				url="http://cloud.github.com/downloads/griff/metaz/MetaZ-1.0a6.zip"
+				sparkle:version="10.05.12.06"
+				sparkle:shortVersionString="1.0a6"
+				type="application/octet-stream"
+				length="2918125"
+				sparkle:dsaSignature="MCwCFFq3C7duV4dzh933raIyzipkeB/rAhRRKMO75k6p5sMs55ThzNyDb5XypA=="
+			/>
+		</item>
 		<item>
 			<title>Version 1.0a5</title>
 			<sparkle:releaseNotesLink>http://griff.github.com/metaz/release-notes.html#version-1.0a5</sparkle:releaseNotesLink>

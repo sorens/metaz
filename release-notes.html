@@ -1,171 +1,298 @@
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>What's new in MetaZ</title>
-    <link href="main.css" type="text/css" rel="stylesheet">
-    <style>
-	body {
-		font-size: 11px;
-	}
-	.table {
-		font-size: 14px;
-	}
-	.table_contents{
-		font-size: 11px;
-	}
-	</style>
+  <meta content='text/html; charset=UTF-8' http-equiv='content-type' /><title>What's new in MetaZ</title><link href='main.css' rel='stylesheet' type='text/css' />
+  <style type='text/css'>
+    /*<![CDATA[*/
+      body {
+        font-size: 13px;
+      }
+      table {
+        width: 100%;
+        font-size: 16px;
+        border:1px dashed #CCC;
+      }
+      .table .header,
+      table .header
+       {
+        background-color: #4DBD02;
+      }
+      table .contents
+       {
+        font-size: 11px;
+      }
+      table .contents p
+       {
+        font-size: 14px;
+      }
+    /*]]>*/
+  </style>
 </head>
 <body>
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-1.0a5"><b>Changes in version 1.0a5</b></a></td>
+      <td class='header'>
+        <a name='version-1.0a6'>
+          <b>Changes in version 1.0a6</b>
+        </a>
+      </td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-    <p>Made the following changes:</p>
-  	<ul>
-  	  <li>Chapter copy/paste</li>
-  	  <li>Progressbar on dock icon</li>
-  	  <li>Termination confimations</li>
-  	  <li>Added a great deal of keyboard shortcuts</li>
-  	</ul>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+        <p>After a long wait finally a new version is ready for test.</p>
+        <p>
+          We have fixed a great number of bugs and made lots of little improvements but the biggest two things
+          are: the addition of a plugin for searching
+          <a href='http://www.thetvdb.com/'>TheTVDB</a>
+          and that loading of files is now done asynchronous with a progress indicator.
+        </p>
+        <p>The complete list of changes are:</p>
+        <ul>
+          <li>Fixed bug so that when keeping temporary file used when writing a move error doesn't occur</li>
+          <li>Fixed bug so that now a queue item is marked as completed even when move or remove of temp file fails</li>
+          <li>Fixed bug dock icon progressbar hidden state</li>
+          <li>Added a whitespace to save temp file name</li>
+          <li>Changed program output logging to only occur when actual output is generated</li>
+          <li>Made credits file for about box and added copyright for Nigel</li>
+          <li>Changed log so that system exceptions also end up there and improved the output format</li>
+          <li>Made controller actually call didLoad and willUnload in MZPlugin</li>
+          <li>Fixed small memory leak in AmazonSearchProvider</li>
+          <li>Added release notes link, homepage link, send feedback item (that doesn't work) and view log to help menu</li>
+          <li>Fixed exception in SearchMeta dealloc</li>
+          <li>Made asynchronous loader</li>
+          <li>Removed all windows from window list</li>
+          <li>Fixed the static window list</li>
+          <li>Made code remove year from end of filename before using it as title</li>
+          <li>Made APWriteManager progress parsing more robust</li>
+          <li>Started removing episode from tagChimp search result when there is no season number and episode is 0 to compensate for tagChimp bug</li>
+          <li>Made read-only / pseudo tags like chapter names raise an exception when being set</li>
+          <li>Fixed apply result chapter name bug</li>
+          <li>Began parsing more of the ratings gotten from Amazon [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/14">14</a>]</li>
+          <li>Redirected stdout to log file</li>
+          <li>Changed hasChapters in MZSearchResult to return NSMultipleValuesMarker when there are only chapter names</li>
+          <li>Added program name to program debug output</li>
+          <li>Disabled title in default tv show search profile</li>
+          <li>Removed search update delay</li>
+          <li>Added full keypath support to NSUserDefaults</li>
+          <li>Added key and keypath getters with default value to NSUserDefaults</li>
+          <li>Fixed Search profile enable preferences bug</li>
+          <li>Added track and disc read/write capability to AtomicParsley plugin [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/8">8</a>]</li>
+          <li>Added preference for disabling automatic search [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/4">4</a>]</li>
+          <li>Fixed 'Writing fails when setting non-string tags to nil' [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/16">16</a>]</li>
+          <li>Added tool tip for enable auto-search preference</li>
+          <li>Forced editing to be confirmed when loading a new file [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/7">7</a>]</li>
+          <li>Made program wait for queue cancel to finish before terminating [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/3">3</a>]</li>
+          <li>Updated build instructions and changed project so git doesn't have to be installed in /opt/local/bin</li>
+          <li>Made some of MZTag thread-safe</li>
+          <li>Moved logging defines to MZLogger.h</li>
+          <li>Added a NSTask wrapper that extends NSOperation</li>
+          <li>Changed some code to use CFBundle instead of NSBundle because of thread safety</li>
+          <li>Made Amazon search perform a bit more like tagChimp search</li>
+          <li>Added title back to default search terms for tv shows</li>
+          <li>Made plugin load api async</li>
+          <li>Added load and save NSOperationQueue's to PluginController</li>
+          <li>Added output parse task class</li>
+          <li>Added class that can control multiple NSOperation objects</li>
+          <li>Changed AtomicParsley plugin to use async loading</li>
+          <li>Renamed MZDataWriteController to MZDataController</li>
+          <li>Added progress indicator for loading</li>
+          <li>Refactored the write process to use NSTaskOperations</li>
+          <li>Replaced all calls to NSFileManager defaultManager with one that creates a new NSFileManager</li>
+          <li>Moved the responsibility of removing the temp file from plugin to MZWriteQueueStatus</li>
+          <li>Moved APReadOperationController to framework</li>
+          <li>Made plugin for TheTVDB [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/1">1</a>]</li>
+          <li>Changed how headers are found so there can be two with name Access.h</li>
+          <li>Changed a lot of header references from quoted form to angle-bracket form</li>
+          <li>Stopped PosterView from beeping when pressing enter is a valid key stroke</li>
+          <li>Added tag definitions for IMDB, ASIN, dvd season and dvd episode</li>
+          <li>Renamed isFinished and isExecuting properties to finished and executing respectively</li>
+          <li>Made finished and executing also send change notifications for "isFinished" and "isExecuting" since NSOperation dependencies uses these</li>
+          <li>Added search queue to plugin controller</li>
+          <li>Split MZRESTSearch into classes MZRESTOperation, MZRESTSearch and MZRESTSearchResult</li>
+          <li>Added statusCode property to REST wrapper so we can ignore data when not relevant</li>
+          <li>Removed non working code that scheduled REST wrapper on main runloop and made code always send request from main thread</li>
+          <li>Made accessing the operations queue for MZRemoteData thread-safe</li>
+          <li>Reordered code for AtomicParsley data read operations so they now are in sequence</li>
+          <li>Deleted a lot of unused code en TCSearch</li>
+          <li>Made loadData call in MZRemoteData detect and always start the load en on the main thread</li>
+          <li>Added links to Lighthouse to the help menu</li>
+          <li>Stopped using copies of strings for url encoding in rest wrapper</li>
+          <li>Added plugin enable/disable functionality and put UI for it in preferences</li>
+          <li>Added bundle property to MZPlugin</li>
+          <li>Fixed small problem in plugin label where TheTVDB got the label "TheTVD B"</li>
+          <li>Removed delete button from plugins preferences</li>
+          <li>Changed initialize methods to work the right way</li>
+          <li>Added some more debug log statements for searches</li>
+          <li>Added call waitUntilFinished to MZOperationsController and MZRESTOperation</li>
+          <li>Fixed race condition in search were controller was released before search completed</li>
+          <li>Fixed bug in apply search result where chapter name is always set</li>
+          <li>Fixed bug where queue run did not finish properly</li>
+          <li>Changed mp4chaps to not fail when removing non-existing chapters from file</li>
+          <li>Fixed bug where empty chapters array made write fail</li>
+          <li>Added preference to specify what to do when put in trash fails</li>
+          <li>Default to keeping the old file for above preference</li>
+          <li>Changed keep functionality to rename the old file to filename+" Backup" so it's out of the way and we can rename the new file</li>
+          <li>Reversed button positions for prompt alert for put in trash so that keep is the default option</li>
+          <li>Added debug output to print command and arguments for all tasks</li>
+          <li>Fixed trackNum bug so that now the episode no is actually written to track num</li>
+          <li>Fixed bug where cancel was not handled properly in writing operations</li>
+          <li>Added an artist value for TheTVDB results that contains the show name</li>
+          <li>Moved loading of NSUserDefaults factory settings to main to fix MZWriteQueue initialization</li>
+          <li>Fixed race condition in search plugins when canceling old search</li>
+          <li>Improved response time in UI when selecting next or previous file in list and auto-search is enabled</li>
+          <li>Fixed bug in the write cleanup code that caused file to not be moved to its final location when move to trash succeeded</li>
+        </ul>
       </td>
     </tr>
   </table>
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-0.8a"><b>Changes in version 0.8a</b></a></td>
+      <td class='header'><a name="version-1.0a5"><b>Changes in version 1.0a5</b></a></td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-    <p>Made the following changes:</p>
-  	<ul>
-  	  <li>Growl notifications</li>
-  	  <li>Undo in presets panel</li>
-  	  <li>Undo for multiple file selection</li>
-  	  <li>Added a full search result apply as proposed by Kevin Pratt</li>
-  	  <li>Fixed support for 64 bit MPEG4 files</li>
-  	  <li>Better error messages</li>
-  	  <li>Fixed leopard support</li>
-  	</ul>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+      <p>Made the following changes:</p>
+      <ul>
+        <li>Chapter copy/paste</li>
+        <li>Progressbar on dock icon</li>
+        <li>Termination confirmations</li>
+        <li>Added a great deal of keyboard shortcuts</li>
+      </ul>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td class='header'><a name="version-0.8a"><b>Changes in version 0.8a</b></a></td>
+    </tr>
+    <tr class='contents'>
+      <td>
+      <p>Made the following changes:</p>
+      <ul>
+        <li>Growl notifications</li>
+        <li>Undo in presets panel</li>
+        <li>Undo for multiple file selection</li>
+        <li>Added a full search result apply as proposed by Kevin Pratt</li>
+        <li>Fixed support for 64 bit MPEG4 files</li>
+        <li>Better error messages</li>
+        <li>Fixed leopard support</li>
+      </ul>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td class='header'>
+        <a name='version-0.7a'>
+          <b>Changes in version 0.7a</b>
+        </a>
+      </td>
+    </tr>
+    <tr class='contents'>
+      <td>
+        <p>The new and improved version now with Amazon US searching.</p>
+        <p>Also made the following changes:</p>
+        <ul>
+          <li>Changed search profiles so that title can be disabled like other search terms</li>
+          <li>Fixed the MetaX presets video type import bug and added code to correct already imported presets</li>
+          <li>Fixed x64 empty rating bug</li>
+        </ul>
       </td>
     </tr>
   </table>
-
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-0.7a"><b>Changes in version 0.7a</b></a></td>
+      <td class='header'>
+        <a name='version-0.6a'>
+          <b>Changes in version 0.6a</b>
+        </a>
+      </td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-    <p>The new and improved version now with Amazon US searching.</p>
-    <p>Also made the following changes:</p>
-  	<ul>
-  	  <li>Changed search profiles so that title can be disabled like other search terms</li>
-  	  <li>Fixed the MetaX presets video type import bug and added code to correct already imported presets</li>
-  	  <li>Fixed x64 empty rating bug</li>
-  	</ul>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+        <p>Fixed critical queue stopping bug.</p>
       </td>
     </tr>
   </table>
-
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-0.6a"><b>Changes in version 0.6a</b></a></td>
+      <td class='header'>
+        <a name='version-0.5a'>
+          <b>Changes in version 0.5a</b>
+        </a>
+      </td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-    <p>Fixed critical queue stopping bug.</p>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+        <p>This is a minor update that fixes a few bugs and improves the UI.</p>
+        <ul>
+          <li>Fixed a few bugs with rating and genre handling</li>
+          <li>Fixed date reading both from AtomicParsley and TagChimp</li>
+          <li>Cleaned up write queue and improved ui for status of tag write</li>
+        </ul>
       </td>
     </tr>
   </table>
-
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-0.5a"><b>Changes in version 0.5a</b></a></td>
+      <td class='header'>
+        <a name='version-0.4a'>
+          <b>Changes in version 0.4a</b>
+        </a>
+      </td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-    <p>This is a minor update that fixes a few bugs and improves the UI.</p>
-  	<ul>
-  	  <li>Fixed a few bugs with rating and genre handling</li>
-  	  <li>Fixed date reading both from AtomicParsley and TagChimp</li>
-  	  <li>Cleaned up write queue and improved ui for status of tag write</li>
-  	</ul>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+        <p>Lots of changes but to mention a few:</p>
+        <ul>
+          <li>TagChimp searching</li>
+          <li>Presets</li>
+          <li>Chapter writing</li>
+          <li>Preferences</li>
+          <li>Ratings</li>
+          <li>Genre</li>
+        </ul>
       </td>
     </tr>
   </table>
-
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-0.4a"><b>Changes in version 0.4a</b></a></td>
+      <td class='header'>
+        <a name='version-0.3a'>
+          <b>Changes in version 0.3a</b>
+        </a>
+      </td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-    <p>Lots of changes but to mention a few:</p>
-  	<ul>
-  	  <li>TagChimp searching</li>
-  	  <li>Presets</li>
-  	  <li>Chapter writing</li>
-  	  <li>Preferences</li>
-  	  <li>Ratings</li>
-  	  <li>Genre</li>
-  	</ul>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+        <p>Implemented write queue UI, drag &amp; drop, paste and services in files table.</p>
       </td>
     </tr>
   </table>
-
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-0.3a"><b>Changes in version 0.3a</b></a></td>
+      <td class='header'>
+        <a name='version-0.2a'>
+          <b>Changes in version 0.2a</b>
+        </a>
+      </td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-  <p>Implemented write queue UI, drag &amp; drop, paste and services in files table.
-    </p>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+        <p>Version 2 for test of Sparkle update</p>
       </td>
     </tr>
   </table>
-
-  <table width="100%" class="table"  style="border:1px dashed #CCC;">
+  <table>
     <tr>
-      <td bgcolor="#4DBD02"><a name="version-0.2a"><b>Changes in version 0.2a</b></a></td>
+      <td class='header'>
+        <a name='version-0.1a'>
+          <b>Changes in version 0.1a</b>
+        </a>
+      </td>
     </tr>
-    <tr class="table_contents">
-      <td>  
-  	<!-- Content Here -->
-  <p>Version 2 for test of Sparkle update</p>
-  	<!-- End Content -->
+    <tr class='contents'>
+      <td>
+        <p>Version for test of Sparkle update</p>
       </td>
     </tr>
   </table>
-
-<table width="100%" class="table"  style="border:1px dashed #CCC;">
-  <tr>
-    <td bgcolor="#4DBD02"><a name="version-0.1a"><b>Changes in version 0.1a</b></a></td>
-  </tr>
-  <tr class="table_contents">
-    <td>  
-	<!-- Content Here -->
-<p>Version for test of Sparkle update</p>
-	<!-- End Content -->
-    </td>
-  </tr>
-</table>
-
 </body>
 </html>
