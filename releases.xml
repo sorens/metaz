@@ -16,7 +16,7 @@
 			<sparkle:releaseNotesLink>http://griff.github.com/metaz/release-notes.html#version-1.0a7</sparkle:releaseNotesLink>
 			<pubDate>Tor, 13 Maj 2010 01:38:14 +0200</pubDate>
 			<enclosure
-				url="http://cloud.github.com/downloads/griff/metaz/MetaZ-1.0a7.zip"
+				url="http://github.com/downloads/griff/metaz/MetaZ-1.0a7.zip"
 				sparkle:version="10.05.13.01"
 				sparkle:shortVersionString="1.0a7"
 				type="application/octet-stream"
