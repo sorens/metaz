@@ -28,6 +28,61 @@
   %table
     %tr
       %td.header
+        %a(name="version-1.0a8")
+          %b Changes in version 1.0a8
+    %tr.contents
+      %td
+        %p
+          After a long hiatus MetaZ is back with a new release that fixes issues with Lion and Power PC
+          as well as support for having only the year as release date.
+        %p
+          We also now have an icon of our very own. Donated by
+          %a{:href=>'http://www.partout.info'} Thomas Jakobi
+          
+        %p The complete list of changes are:
+        %ul
+          %li Made files table and presets table ignore newlines and reverse editing on escape
+          %li Changed how words are defined for file name editing so it behaves more like renaming files in Finder (e.g. dot is a word separator)
+          %li Fixed doubleClickAtIndex for file name editing
+          %li Commit the edit before doing a search.
+          %li Fixed small bug in picture context menu where show image editor option was disabled when picture was a RemoteData
+          %li Added option to cancel editing by typing esc. for all UndoTableViews
+          %li Changed MZDynamicObject so that it doesn't use NSInvocation when being called from getValueForKey and setValue:forKey
+          %li Made identifier, localizedName and editorCell for class MZTag into properties
+          %li Fixed small issue in MZPriorObserverFix that caused a great deal of unresponsiveness
+          %li Added missing call to delegate dataProvider:controller:writeStartedForEdits: in APDataProvider
+          %li Added hidden start column to chapter editor
+          %li Added column menu to chapter editor
+          %li Changed some getters into properties
+          %li Added compare method to MZTimeCode
+          %li Fixed small issue in web chapter parsing where chapters that lasted less than a minute were not supported
+          %li= "Fixed chapter edit undo #{bug_link(12)}"
+          %li Changed the rename preset undo action to "Rename Preset"
+          %li Changed some privat class categories to extensions
+          %li Changed building.txt to a README
+          %li Added our TheTVDB API key to repository.
+          %li Fixed return warning in MetaEdits
+          %li Fixed tvdb view in browser and added menu items for view episode and view season
+          %li Did a Build and Analyze and fixed the found problems
+          %li Added fix for calling shell scripts in MZTaskOperation that messed with stdout
+          %li Added icon from Thomas Jakobi
+          %li Set new icon in Info.plist
+          %li= "Updated mp4chaps to trunk-r479 and fixed missing ppc architecture #{bug_link(22)} #{bug_link(23)}"
+          %li= "Lion issues should now be fixed #{bug_link(31)}"
+          %li= "Changed tagchimp hostname from www.tagchimp.com to tagchimp.com because that is the CN in their certificate hopefully fixing #{bug_link(27)}"
+          %li= "Fixed #{bug_link(29)} so now main window reopens when dropping a file or using open from main menu"
+          %li Fixed memory problem in open that caused a crash because dictionary was released to early
+          %li= "Changed open sheet to use file extensions instead of UTIs becaused it was causing problems with m4v extension #{bug_link(31)}"
+          %li Changed small program icon used in search result to the new MetaZ icon
+          %li Added icon credit
+          %li= "Created my own DateFormatter to fix nil bug #{bug_link(9)}"
+          %li Added a new category with a method for checking if all chars in a string are part of a given NSCharacterSet
+          %li Added support for having only the year in date tag
+
+
+  %table
+    %tr
+      %td.header
         %a(name="version-1.0a7")
           %b Changes in version 1.0a7
     %tr.contents
