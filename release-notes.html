@@ -27,6 +27,56 @@
   <table>
     <tr>
       <td class='header'>
+        <a name='version-1.0a9'>
+          <b>Changes in version 1.0a9</b>
+        </a>
+      </td>
+    </tr>
+    <tr class='contents'>
+      <td>
+        <p>
+          By request we are pleased to release Alpha 9 of MetaZ that brings with it a whole host of bug fixes and some
+          exciting new features.
+        </p>
+        <p>
+          First off TheTVDB searching now retrieves season posters and UI is improved to let you select the one you prefer
+          from all available posters.
+        </p>
+        <p>A plugin for searching TheMovieDb.org has been added, greatly improving the ease with which movies can be tagged.</p>
+        <p>All searching now supports caching which should bring with it some speed improvements</p>
+        <p>
+          On the downside the Amazon plugin has been temporarily removed because it has been broken since october
+          and we haven't gotten around to fixing it yet.
+        </p>
+        <p>The complete list of changes are:</p>
+        <ul>
+          <li>Changed Sparkle url and switched on system profile</li>
+          <li>Updated growl and switched to a MultiGrowl approach for loading it so we can support both mist and legacy</li>
+          <li>Changed default time zone to UTC</li>
+          <li>Added TheMovieDb searching</li>
+          <li>Fixed problem in mp4chaps that caused it to crash with some files</li>
+          <li>Added a filename changed checkbox to files table and got revertChanged to work on files table</li>
+          <li>Changed status column to a dot like Mail</li>
+          <li>Added support for two ISO 8601 date formats [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/39">39</a>] to all date fields; 2008-07-19 and 2008-07-19T00:00:00Z</li>
+          <li>Fixed apply search result to now use the picture selected in ui</li>
+          <li>Fixed encoding problems in search results</li>
+          <li>Added posters support to TheTVDB search plugin</li>
+          <li>Added support for array of pictures to PictureEditor</li>
+          <li>Fixed index error in MZFileNameTextStorage</li>
+          <li>Changed TheTVDB search to use full series files</li>
+          <li>Switched all http requests to ASIHttpRequest which means caching support</li>
+          <li>Changed progress bar on main window to appear with an animation and not modify the window size</li>
+          <li>Switched to MGViewAnimation</li>
+          <li>Reworked credits to make it clearer when contributer is there because we simply used their code ie. they are not associated with or endorse MetaZ</li>
+          <li>Cleaned up code the hides and shows main window progress bar and made it a little more robust</li>
+          <li>Fixed dock icon file drop</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td class='header'>
         <a name='version-1.0a8'>
           <b>Changes in version 1.0a8</b>
         </a>
