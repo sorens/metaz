@@ -27,6 +27,31 @@
   <table>
     <tr>
       <td class='header'>
+        <a name='version-1.0a11'>
+          <b>Changes in version 1.0a11 (2. November 2012)</b>
+        </a>
+      </td>
+    </tr>
+    <tr class='contents'>
+      <td>
+        <p>
+          Alpha 10 had a major crashing issue that this release fixes.
+        </p>
+        <p>The complete list of changes are:</p>
+        <ul>
+          <li>Fixed sparkle signature generation and moved zip creation to make_diskimage.bash</li>
+          <li>Removed save option parameter from quit command</li>
+          <li>Added single index remove method for files array to MZMetaLoaded</li>
+          <li>Added files insert method to make MZMetaLoader mutable key/value compliant for files</li>
+          <li>Added release of scriptCommand to MZLoadOperation dealloc fixing a memory leak</li>
+          <li>Retained edits and errors in MZLoadOperation fixing [<a href="https://github.com/griff/metaz/issues/26">26</a>]</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td class='header'>
         <a name='version-1.0a10'>
           <b>Changes in version 1.0a10</b>
         </a>

@@ -30,6 +30,25 @@
   %table
     %tr
       %td.header
+        %a(name="version-1.0a11")
+          %b Changes in version 1.0a11 (2. November 2012)
+    %tr.contents
+      %td
+        %p
+          Alpha 10 had a major crashing issue that this release fixes.
+          
+        %p The complete list of changes are:
+        %ul
+          %li Fixed sparkle signature generation and moved zip creation to make_diskimage.bash
+          %li Removed save option parameter from quit command
+          %li Added single index remove method for files array to MZMetaLoaded
+          %li Added files insert method to make MZMetaLoader mutable key/value compliant for files
+          %li Added release of scriptCommand to MZLoadOperation dealloc fixing a memory leak
+          %li= "Retained edits and errors in MZLoadOperation fixing #{new_bug_link(26)}"
+
+  %table
+    %tr
+      %td.header
         %a(name="version-1.0a10")
           %b Changes in version 1.0a10
     %tr.contents
