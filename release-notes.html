@@ -27,6 +27,72 @@
   <table>
     <tr>
       <td class='header'>
+        <a name='version-1.0a12'>
+          <b>Changes in version 1.0a12 (6. November 2012)</b>
+        </a>
+      </td>
+    </tr>
+    <tr class='contents'>
+      <td>
+        <p>Alpha 12 fixes the regression we had where m4v files where no longer editable [<a href="https://github.com/griff/metaz/issues/27">27</a>].</p>
+        <p>
+          Finally there is integration with iTunes and a lot of it. You can drag items from iTunes and drop them
+          onto either the MetaZ dock icon or the files table. You can copy items from iTunes and paste them into
+          the files table. MetaZ has a service in the Services menu of iTunes that opens the selected items in MetaZ.
+          Two new When Done actions have been added. One of them, enabled by default, updates the file
+          location and tells iTunes to refresh its meta data if the file was added to MetaZ using any of the above
+          methods. The other adds any file written by MetaZ to iTunes.
+        </p>
+        <p>
+          This release also contains a reworked notification / event system which is now based on plugins and brings
+          with it support for plugins implemented in AppleScript. The two iTunes releated completion actions are
+          in fact implemented in AppleScript. Though the process for doing so is currently a bit involved it should
+          be possible for you to make your own plugins in AppleScript.
+        </p>
+        <p>The complete list of changes are:</p>
+        <ul>
+          <li>Forgot to change UTIs in APDataProvider when moving away from our own UTI for m4v files [<a href="https://github.com/griff/metaz/issues/27">27</a>]</li>
+          <li>Added our own array controller with delayed rearrangement and enabled automaticallyRearrangesObjects for files</li>
+          <li>Generalized SearchTableView menuForEvent, moved it to UndoTableView and deleted SearchTableView</li>
+          <li>Fixed spelling error in MZPresets</li>
+          <li>Removed commented out code</li>
+          <li>Switched usages of getBytes: in MZScriptingAdditions to getBytes:length: since that is not deprecated and safer</li>
+          <li>Added NSDecimal support to NSValue</li>
+          <li>Made NSDecimal support in scripting objectValue use decimalValue which coerces</li>
+          <li>Added support for alias to scripting objectValue</li>
+          <li>Added iTunesPersistentID tag</li>
+          <li>Made allKnownTags return all registered tags</li>
+          <li>Switched CFBundleVersion of plugins to BUILDVERSION</li>
+          <li>Added applescript access to documents in queue</li>
+          <li>Added faster access to applescript tags</li>
+          <li>Removed some unused code</li>
+          <li>Added support for passing initial metadata along when loading files</li>
+          <li>Added some paths to Xcode groups</li>
+          <li>Fixed problem with plugin label was prefixed with a whitespace</li>
+          <li>Retained the bundle for the plugin</li>
+          <li>Added an identifier property to MZPlugin</li>
+          <li>Removed whitespace</li>
+          <li>Added category to create NSError from apple script error dictionary</li>
+          <li>Maded selectedDocuments always return an array</li>
+          <li>Added support for apple script and action only plugins</li>
+          <li>Added support for receiving drag and drop and pasting from iTunes as well as refreshing iTunes metadata after write</li>
+          <li>Merge branch 'feature/scriptactions' into develop</li>
+          <li>Fixed enabling of actions plugins</li>
+          <li>Fixed wrong variable name</li>
+          <li>Changed queue so status is stopping until notifications have been sent</li>
+          <li>Prevented app from quitting while queue is stopping</li>
+          <li>Moved enabled property in MZPlugin from private to public API</li>
+          <li>Fixed plugin label prepending a whitespace when class name is only one word</li>
+          <li>Added a delayed quit to scripting dictionary</li>
+          <li>Moved to a "when done" system based entirely on actions plugins</li>
+          <li>Added an "add to iTunes" plugin fixing [<a href="https://github.com/griff/metaz/issues/18">18</a>]</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td class='header'>
         <a name='version-1.0a11'>
           <b>Changes in version 1.0a11 (2. November 2012)</b>
         </a>

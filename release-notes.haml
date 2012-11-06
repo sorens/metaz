@@ -30,6 +30,68 @@
   %table
     %tr
       %td.header
+        %a(name="version-1.0a12")
+          %b Changes in version 1.0a12 (6. November 2012)
+    %tr.contents
+      %td
+        %p= "Alpha 12 fixes the regression we had where m4v files where no longer editable #{new_bug_link(27)}."
+        
+        %p
+          Finally there is integration with iTunes and a lot of it. You can drag items from iTunes and drop them
+          onto either the MetaZ dock icon or the files table. You can copy items from iTunes and paste them into
+          the files table. MetaZ has a service in the Services menu of iTunes that opens the selected items in MetaZ.
+          Two new When Done actions have been added. One of them, enabled by default, updates the file
+          location and tells iTunes to refresh its meta data if the file was added to MetaZ using any of the above
+          methods. The other adds any file written by MetaZ to iTunes.
+        
+        %p
+          This release also contains a reworked notification / event system which is now based on plugins and brings
+          with it support for plugins implemented in AppleScript. The two iTunes releated completion actions are
+          in fact implemented in AppleScript. Though the process for doing so is currently a bit involved it should
+          be possible for you to make your own plugins in AppleScript.
+          
+        %p The complete list of changes are:
+        %ul
+          %li= "Forgot to change UTIs in APDataProvider when moving away from our own UTI for m4v files #{new_bug_link(27)}"
+          %li Added our own array controller with delayed rearrangement and enabled automaticallyRearrangesObjects for files
+          %li Generalized SearchTableView menuForEvent, moved it to UndoTableView and deleted SearchTableView
+          %li Fixed spelling error in MZPresets
+          %li Removed commented out code
+          %li Switched usages of getBytes: in MZScriptingAdditions to getBytes:length: since that is not deprecated and safer
+          %li Added NSDecimal support to NSValue
+          %li Made NSDecimal support in scripting objectValue use decimalValue which coerces
+          %li Added support for alias to scripting objectValue
+          %li Added iTunesPersistentID tag
+          %li Made allKnownTags return all registered tags
+          %li Switched CFBundleVersion of plugins to BUILDVERSION
+          %li Added applescript access to documents in queue
+          %li Added faster access to applescript tags
+          %li Removed some unused code
+          %li Added support for passing initial metadata along when loading files
+          %li Added some paths to Xcode groups
+          %li Fixed problem with plugin label was prefixed with a whitespace
+          %li Retained the bundle for the plugin
+          %li Added an identifier property to MZPlugin
+          %li Removed whitespace
+          %li Added category to create NSError from apple script error dictionary
+          %li Maded selectedDocuments always return an array
+          %li Added support for apple script and action only plugins
+          %li Added support for receiving drag and drop and pasting from iTunes as well as refreshing iTunes metadata after write
+          %li Merge branch 'feature/scriptactions' into develop
+          %li Fixed enabling of actions plugins
+          %li Fixed wrong variable name
+          %li Changed queue so status is stopping until notifications have been sent
+          %li Prevented app from quitting while queue is stopping
+          %li Moved enabled property in MZPlugin from private to public API
+          %li Fixed plugin label prepending a whitespace when class name is only one word
+          %li Added a delayed quit to scripting dictionary
+          %li Moved to a "when done" system based entirely on actions plugins
+          %li= "Added an \"add to iTunes\" plugin fixing #{new_bug_link(18)}"
+
+
+  %table
+    %tr
+      %td.header
         %a(name="version-1.0a11")
           %b Changes in version 1.0a11 (2. November 2012)
     %tr.contents
