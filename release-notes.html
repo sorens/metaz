@@ -27,6 +27,66 @@
   <table>
     <tr>
       <td class='header'>
+        <a name='version-1.0a13'>
+          <b>Changes in version 1.0a13 (4. December 2012)</b>
+        </a>
+      </td>
+    </tr>
+    <tr class='contents'>
+      <td>
+        <p>
+          Alpha 13 optimizes the search to both make MetaZ more responsive but
+          also to reduce the load it puts on search providers like
+          <a href='http://www.tagchimp.com/'>tagChimp</a>
+          and
+          <a href='http://thetvdb.com/'>The TVDB.</a>
+        </p>
+        <p>
+          Also improved in this release is the support for AppleScript plugins which
+          have been reworked to have an API that more resembles folder actions and
+          which can now be installed by simply dropping them onto the MetaZ dock icon.
+        </p>
+        <p>Lastly video type has been changed to reflect changes in iTunes 11 [<a href="https://github.com/griff/metaz/issues/34">34</a>] and to add a few new ones.</p>
+        <p>The complete list of changes are:</p>
+        <ul>
+          <li>Finally cracked how to do pretty AppleScript event callbacks</li>
+          <li>Set the allowsUndo flag on the long description text view</li>
+          <li>Made own versions of NSComboBox, NSTextField and NSTextView that do not drop responder status after editing ends</li>
+          <li>Moved next file and previous file menus</li>
+          <li>Removed selectNextFile and selectPreviousFile from AppController and hooked the menus directly up to the files controller</li>
+          <li>Renamed document related applescript queue events</li>
+          <li>Added an opened document applescript event</li>
+          <li>Improved Update iTunes plugin by making it look for opened files in iTunes when iTunes is running</li>
+          <li>Moved some code around so that now search is more isolated from the rest</li>
+          <li>Fixed error in The TVDB search where it failed when tv show name was empty</li>
+          <li>Fixed regression where search could not be started from search field</li>
+          <li>Fixed image loading retry related crash [<a href="https://github.com/griff/metaz/issues/26">26</a>]</li>
+          <li>Optimized automatic search by checking and only doing the search when the terms have actually changed</li>
+          <li>Made all search plugins process the response in the background</li>
+          <li>Fixed problem with search not always getting reported as finished. Caused by ASIHTTPRequest not calling delegate methods when request was canceled before it was started.</li>
+          <li>Released search delegate when request is canceled to fix problem with sometimes seing spurious search results from previous searches.</li>
+          <li>Commented out a lot of logging in the search plugins because it was getting a bit spamy</li>
+          <li>Set the maximum number of concurrent search operations to 12 like the remote data queue is set to.</li>
+          <li>Set an error on MZRemoteData when response status code is above 399</li>
+          <li>Set the max age of tagchimp responses to 120 since it does not have cache headers of its own.</li>
+          <li>Added support for applescript bundle plugins</li>
+          <li>Added support for installing applescript plugins by dropping them unto the app icon</li>
+          <li>Delayed the window in the alert plugin.</li>
+          <li>Commented out unused variables</li>
+          <li>Reworked plugin architecture to move from providers to plugin base classes.</li>
+          <li>Gave search provider and data provider plugins their own file extensions and UTIs</li>
+          <li>Added Script Debugger template</li>
+          <li>Added a property for the rearrange delay and set to to half a second by default</li>
+          <li>Updated copyright year</li>
+          <li>Fixed the logic for loading the plugin icon</li>
+          <li>Renamed Movies and Short Film video types fixing [<a href="https://github.com/griff/metaz/issues/34">34</a>] and added new video types.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td class='header'>
         <a name='version-1.0a12'>
           <b>Changes in version 1.0a12 (6. November 2012)</b>
         </a>
