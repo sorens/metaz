@@ -1,636 +1,570 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='content-type' /><title>What's new in MetaZ</title><link href='main.css' rel='stylesheet' type='text/css' />
-  <style type='text/css'>
-    /*<![CDATA[*/
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>What's new in MetaZ</title>
+    <style type="text/css">
       body {
-        font-size: 11px;
+        font-size:13px;
+        font-family: Lucida Grande;
       }
-      table {
-        width: 100%;
-        font-size: 14px;
-        border:1px dashed #CCC;
+      h1 {
+        background-color: aliceblue;
+        padding: 0.2em;
       }
-      .table .header,
-      table .header
-       {
-        background-color: #4DBD02;
+      article {
+        margin-bottom: 3em;
       }
-      table .contents
-       {
-        font-size: 11px;
-      }
-    /*]]>*/
-  </style>
-</head>
-<body>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a13'>
-          <b>Changes in version 1.0a13 (4. December 2012)</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>
-          Alpha 13 optimizes the search to both make MetaZ more responsive but
-          also to reduce the load it puts on search providers like
-          <a href='http://www.tagchimp.com/'>tagChimp</a>
-          and
-          <a href='http://thetvdb.com/'>The TVDB.</a>
-        </p>
-        <p>
-          Also improved in this release is the support for AppleScript plugins which
-          have been reworked to have an API that more resembles folder actions and
-          which can now be installed by simply dropping them onto the MetaZ dock icon.
-        </p>
-        <p>Lastly video type has been changed to reflect changes in iTunes 11 [<a href="https://github.com/griff/metaz/issues/34">34</a>] and to add a few new ones.</p>
-        <p>The complete list of changes are:</p>
-        <ul>
-          <li>Finally cracked how to do pretty AppleScript event callbacks</li>
-          <li>Set the allowsUndo flag on the long description text view</li>
-          <li>Made own versions of NSComboBox, NSTextField and NSTextView that do not drop responder status after editing ends</li>
-          <li>Moved next file and previous file menus</li>
-          <li>Removed selectNextFile and selectPreviousFile from AppController and hooked the menus directly up to the files controller</li>
-          <li>Renamed document related applescript queue events</li>
-          <li>Added an opened document applescript event</li>
-          <li>Improved Update iTunes plugin by making it look for opened files in iTunes when iTunes is running</li>
-          <li>Moved some code around so that now search is more isolated from the rest</li>
-          <li>Fixed error in The TVDB search where it failed when tv show name was empty</li>
-          <li>Fixed regression where search could not be started from search field</li>
-          <li>Fixed image loading retry related crash [<a href="https://github.com/griff/metaz/issues/26">26</a>]</li>
-          <li>Optimized automatic search by checking and only doing the search when the terms have actually changed</li>
-          <li>Made all search plugins process the response in the background</li>
-          <li>Fixed problem with search not always getting reported as finished. Caused by ASIHTTPRequest not calling delegate methods when request was canceled before it was started.</li>
-          <li>Released search delegate when request is canceled to fix problem with sometimes seing spurious search results from previous searches.</li>
-          <li>Commented out a lot of logging in the search plugins because it was getting a bit spamy</li>
-          <li>Set the maximum number of concurrent search operations to 12 like the remote data queue is set to.</li>
-          <li>Set an error on MZRemoteData when response status code is above 399</li>
-          <li>Set the max age of tagchimp responses to 120 since it does not have cache headers of its own.</li>
-          <li>Added support for applescript bundle plugins</li>
-          <li>Added support for installing applescript plugins by dropping them unto the app icon</li>
-          <li>Delayed the window in the alert plugin.</li>
-          <li>Commented out unused variables</li>
-          <li>Reworked plugin architecture to move from providers to plugin base classes.</li>
-          <li>Gave search provider and data provider plugins their own file extensions and UTIs</li>
-          <li>Added Script Debugger template</li>
-          <li>Added a property for the rearrange delay and set to to half a second by default</li>
-          <li>Updated copyright year</li>
-          <li>Fixed the logic for loading the plugin icon</li>
-          <li>Renamed Movies and Short Film video types fixing [<a href="https://github.com/griff/metaz/issues/34">34</a>] and added new video types.</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a12'>
-          <b>Changes in version 1.0a12 (6. November 2012)</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>Alpha 12 fixes the regression we had where m4v files where no longer editable [<a href="https://github.com/griff/metaz/issues/27">27</a>].</p>
-        <p>
-          Finally there is integration with iTunes and a lot of it. You can drag items from iTunes and drop them
-          onto either the MetaZ dock icon or the files table. You can copy items from iTunes and paste them into
-          the files table. MetaZ has a service in the Services menu of iTunes that opens the selected items in MetaZ.
-          Two new When Done actions have been added. One of them, enabled by default, updates the file
-          location and tells iTunes to refresh its meta data if the file was added to MetaZ using any of the above
-          methods. The other adds any file written by MetaZ to iTunes.
-        </p>
-        <p>
-          This release also contains a reworked notification / event system which is now based on plugins and brings
-          with it support for plugins implemented in AppleScript. The two iTunes related completion actions are
-          in fact implemented in AppleScript. Though the process for doing so is currently a bit involved it should
-          be possible for you to make your own plugins in AppleScript.
-        </p>
-        <p>The complete list of changes are:</p>
-        <ul>
-          <li>Forgot to change UTIs in APDataProvider when moving away from our own UTI for m4v files [<a href="https://github.com/griff/metaz/issues/27">27</a>]</li>
-          <li>Added our own array controller with delayed rearrangement and enabled automaticallyRearrangesObjects for files</li>
-          <li>Generalized SearchTableView menuForEvent, moved it to UndoTableView and deleted SearchTableView</li>
-          <li>Fixed spelling error in MZPresets</li>
-          <li>Removed commented out code</li>
-          <li>Switched usages of getBytes: in MZScriptingAdditions to getBytes:length: since that is not deprecated and safer</li>
-          <li>Added NSDecimal support to NSValue</li>
-          <li>Made NSDecimal support in scripting objectValue use decimalValue which coerces</li>
-          <li>Added support for alias to scripting objectValue</li>
-          <li>Added iTunesPersistentID tag</li>
-          <li>Made allKnownTags return all registered tags</li>
-          <li>Switched CFBundleVersion of plugins to BUILDVERSION</li>
-          <li>Added applescript access to documents in queue</li>
-          <li>Added faster access to applescript tags</li>
-          <li>Removed some unused code</li>
-          <li>Added support for passing initial metadata along when loading files</li>
-          <li>Added some paths to Xcode groups</li>
-          <li>Fixed problem with plugin label was prefixed with a whitespace</li>
-          <li>Retained the bundle for the plugin</li>
-          <li>Added an identifier property to MZPlugin</li>
-          <li>Removed whitespace</li>
-          <li>Added category to create NSError from apple script error dictionary</li>
-          <li>Maded selectedDocuments always return an array</li>
-          <li>Added support for apple script and action only plugins</li>
-          <li>Added support for receiving drag and drop and pasting from iTunes as well as refreshing iTunes metadata after write</li>
-          <li>Merge branch 'feature/scriptactions' into develop</li>
-          <li>Fixed enabling of actions plugins</li>
-          <li>Fixed wrong variable name</li>
-          <li>Changed queue so status is stopping until notifications have been sent</li>
-          <li>Prevented app from quitting while queue is stopping</li>
-          <li>Moved enabled property in MZPlugin from private to public API</li>
-          <li>Fixed plugin label prepending a whitespace when class name is only one word</li>
-          <li>Added a delayed quit to scripting dictionary</li>
-          <li>Moved to a "when done" system based entirely on actions plugins</li>
-          <li>Added an "add to iTunes" plugin fixing [<a href="https://github.com/griff/metaz/issues/18">18</a>]</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a11'>
-          <b>Changes in version 1.0a11 (2. November 2012)</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>
-          Alpha 10 had a major crashing issue that this release fixes.
-        </p>
-        <p>The complete list of changes are:</p>
-        <ul>
-          <li>Fixed sparkle signature generation and moved zip creation to make_diskimage.bash</li>
-          <li>Removed save option parameter from quit command</li>
-          <li>Added single index remove method for files array to MZMetaLoaded</li>
-          <li>Added files insert method to make MZMetaLoader mutable key/value compliant for files</li>
-          <li>Added release of scriptCommand to MZLoadOperation dealloc fixing a memory leak</li>
-          <li>Retained edits and errors in MZLoadOperation fixing [<a href="https://github.com/griff/metaz/issues/26">26</a>]</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a10'>
-          <b>Changes in version 1.0a10</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>
-          Long overdue Alpha 10 of MetaZ fixes the problem with adding images that slipped into Alpha 9.
-        </p>
-        <p>
-          It also fixes issues with TagChimp results sometimes not getting shown and limits the number of
-          concurrent poster downloads to 12 so as not to overload the CPU and internet connection when dealing with
-          large number of posters.
-        </p>
-        <p>
-          MetaZ now has basic AppleScript support so that you can open files and modify tags from a script.
-        </p>
-        <p>The complete list of changes are:</p>
-        <ul>
-          <li>Fixed editable issue in the poster control [<a href="https://github.com/griff/metaz/issues/4">4</a>]</li>
-          <li>Removed MZRetain, MZRelease & MZCopyDescription because CF* ones works as well</li>
-          <li>Added AEVTBuilder to externals</li>
-          <li>Moved release related shell scripts out of xcode project to external files</li>
-          <li>Removed gitattributes</li>
-          <li>Moved away from out own custom uti for m4v files since that was causing problems of its own</li>
-          <li>Added pragma mark to MZFileNameTextStorage</li>
-          <li>Added a script name property to MZTag</li>
-          <li>Added applescript record converter to MZTimeCode</li>
-          <li>Added basic AppleScript support</li>
-          <li>Added some test applescripts</li>
-          <li>Merge pull request [<a href="https://github.com/griff/metaz/issues/23">23</a>] from slessard/11cb05ba72bf165649fe64e2f9689e58afc30348</li>
-          <li>Merge branch 'develop' of github.com:griff/metaz into develop</li>
-          <li>Removed gitattributes</li>
-          <li>Moved release related shell scripts out of xcode project to external files</li>
-          <li>Moved away from out own custom uti for m4v files since that was causing problems of its own</li>
-          <li>Fixed small memory leak in ToolTipButton</li>
-          <li>Added getters for values, value names and localized value names of MZEnumTags</li>
-          <li>Added helpers to make converting and supporting apple script easier</li>
-          <li>Finished implementation of open command</li>
-          <li>Finished the rough first version of applescript support</li>
-          <li>Added class description comment to MZDateFormatter.h</li>
-          <li>Fixed a small issue with pictureChanged value being wrong when app first starts because of NIB load order</li>
-          <li>Limited the number of concurrent MZRemoteData operations to 12</li>
-          <li>Fixed encoding problem in TagChimp search result</li>
-          <li>Merge branch 'feature/applescript' into develop</li>
-          <li>Moved selection down in file MetaZApplication to get rid of warning</li>
-          <li>Changed tag value method a bit to get rid of warning</li>
-          <li>Updated Bundle Version to include git commit hash</li>
-          <li>Updated copyright year in Info.plist</li>
-          <li>Removed SmartCrashReports keys from Info.plist since they are not used</li>
-          <li>Added missing MZTimeCode.h import to MetaData.h</li>
-          <li>Fixed a few memory leaks</li>
-          <li>Fixed some problems in the sparkle_sign script</li>
-          <li>Changed release shell scripts to use bash instead of sh</li>
-          <li>Bumped version to 1.0a10</li>
-          <li>Changed sparkle:version to CFBundleVersion from Info.plist</li>
-          <li>Merge branch 'release/1.0a10'</li>
-          <li>Fix several compiler/linker warnings/errors</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a9'>
-          <b>Changes in version 1.0a9</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>
-          By request we are pleased to release Alpha 9 of MetaZ that brings with it a whole host of bug fixes and some
-          exciting new features.
-        </p>
-        <p>
-          First off TheTVDB searching now retrieves season posters and UI is improved to let you select the one you prefer
-          from all available posters.
-        </p>
-        <p>A plugin for searching TheMovieDb.org has been added, greatly improving the ease with which movies can be tagged.</p>
-        <p>All searching now supports caching which should bring with it some speed improvements.</p>
-        <p>
-          On the downside the Amazon plugin has been temporarily removed because it has been broken since october
-          and we haven't gotten around to fixing it yet.
-        </p>
-        <p>The complete list of changes are:</p>
-        <ul>
-          <li>Changed Sparkle url and switched on system profile</li>
-          <li>Updated growl and switched to a MultiGrowl approach for loading it so we can support both mist and legacy</li>
-          <li>Changed default time zone to UTC</li>
-          <li>Added TheMovieDb searching</li>
-          <li>Fixed problem in mp4chaps that caused it to crash with some files</li>
-          <li>Added a filename changed checkbox to files table and got revertChanged to work on files table</li>
-          <li>Changed status column to a dot like Mail</li>
-          <li>Added support for two ISO 8601 date formats [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/39">39</a>] to all date fields; 2008-07-19 and 2008-07-19T00:00:00Z</li>
-          <li>Fixed apply search result to now use the picture selected in ui</li>
-          <li>Fixed encoding problems in search results</li>
-          <li>Added posters support to TheTVDB search plugin</li>
-          <li>Added support for array of pictures to PictureEditor</li>
-          <li>Fixed index error in MZFileNameTextStorage</li>
-          <li>Changed TheTVDB search to use full series files</li>
-          <li>Switched all http requests to ASIHttpRequest which means caching support</li>
-          <li>Changed progress bar on main window to appear with an animation and not modify the window size</li>
-          <li>Switched to MGViewAnimation</li>
-          <li>Reworked credits to make it clearer when contributer is there because we simply used their code ie. they are not associated with or endorse MetaZ</li>
-          <li>Cleaned up code the hides and shows main window progress bar and made it a little more robust</li>
-          <li>Fixed dock icon file drop</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a8'>
-          <b>Changes in version 1.0a8</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>
-          After a long hiatus MetaZ is back with a new release that fixes issues with Lion and Power PC
-          as well as support for having only the year as release date.
-        </p>
-        <p>
-          We also now have an icon of our very own. Donated by
-          <a href='http://www.partout.info'>Thomas Jakobi</a>
-        </p>
-        <p>The complete list of changes are:</p>
-        <ul>
-          <li>Made files table and presets table ignore newlines and reverse editing on escape</li>
-          <li>Changed how words are defined for file name editing so it behaves more like renaming files in Finder (e.g. dot is a word separator)</li>
-          <li>Fixed doubleClickAtIndex for file name editing</li>
-          <li>Commit the edit before doing a search.</li>
-          <li>Fixed small bug in picture context menu where show image editor option was disabled when picture was a RemoteData</li>
-          <li>Added option to cancel editing by typing esc. for all UndoTableViews</li>
-          <li>Changed MZDynamicObject so that it doesn't use NSInvocation when being called from getValueForKey and setValue:forKey</li>
-          <li>Made identifier, localizedName and editorCell for class MZTag into properties</li>
-          <li>Fixed small issue in MZPriorObserverFix that caused a great deal of unresponsiveness</li>
-          <li>Added missing call to delegate dataProvider:controller:writeStartedForEdits: in APDataProvider</li>
-          <li>Added hidden start column to chapter editor</li>
-          <li>Added column menu to chapter editor</li>
-          <li>Changed some getters into properties</li>
-          <li>Added compare method to MZTimeCode</li>
-          <li>Fixed small issue in web chapter parsing where chapters that lasted less than a minute were not supported</li>
-          <li>Fixed chapter edit undo [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/12">12</a>]</li>
-          <li>Changed the rename preset undo action to "Rename Preset"</li>
-          <li>Changed some privat class categories to extensions</li>
-          <li>Changed building.txt to a README</li>
-          <li>Added our TheTVDB API key to repository.</li>
-          <li>Fixed return warning in MetaEdits</li>
-          <li>Fixed tvdb view in browser and added menu items for view episode and view season</li>
-          <li>Did a Build and Analyze and fixed the found problems</li>
-          <li>Added fix for calling shell scripts in MZTaskOperation that messed with stdout</li>
-          <li>Added icon from Thomas Jakobi</li>
-          <li>Set new icon in Info.plist</li>
-          <li>Updated mp4chaps to trunk-r479 and fixed missing ppc architecture [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/22">22</a>] [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/23">23</a>]</li>
-          <li>Lion issues should now be fixed [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/31">31</a>]</li>
-          <li>Changed tagchimp hostname from www.tagchimp.com to tagchimp.com because that is the CN in their certificate hopefully fixing [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/27">27</a>]</li>
-          <li>Fixed [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/29">29</a>] so now main window reopens when dropping a file or using open from main menu</li>
-          <li>Fixed memory problem in open that caused a crash because dictionary was released to early</li>
-          <li>Changed open sheet to use file extensions instead of UTIs becaused it was causing problems with m4v extension [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/31">31</a>]</li>
-          <li>Changed small program icon used in search result to the new MetaZ icon</li>
-          <li>Added icon credit</li>
-          <li>Created my own DateFormatter to fix nil bug [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/9">9</a>]</li>
-          <li>Added a new category with a method for checking if all chars in a string are part of a given NSCharacterSet</li>
-          <li>Added support for having only the year in date tag</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a7'>
-          <b>Changes in version 1.0a7</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>Fixed problem with empty tagchimp result causing a crash</p>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-1.0a6'>
-          <b>Changes in version 1.0a6</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>After a long wait finally a new version is ready for test.</p>
-        <p>
-          We have fixed a great number of bugs and made lots of little improvements but the biggest two things
-          are: the addition of a plugin for searching
-          <a href='http://www.thetvdb.com/'>TheTVDB</a>
-          and that loading of files is now done asynchronous with a progress indicator.
-        </p>
-        <p>The complete list of changes are:</p>
-        <ul>
-          <li>Fixed bug so that when keeping temporary file used when writing a move error doesn't occur</li>
-          <li>Fixed bug so that now a queue item is marked as completed even when move or remove of temp file fails</li>
-          <li>Fixed bug dock icon progressbar hidden state</li>
-          <li>Added a whitespace to save temp file name</li>
-          <li>Changed program output logging to only occur when actual output is generated</li>
-          <li>Made credits file for about box and added copyright for Nigel</li>
-          <li>Changed log so that system exceptions also end up there and improved the output format</li>
-          <li>Made controller actually call didLoad and willUnload in MZPlugin</li>
-          <li>Fixed small memory leak in AmazonSearchProvider</li>
-          <li>Added release notes link, homepage link, send feedback item (that doesn't work) and view log to help menu</li>
-          <li>Fixed exception in SearchMeta dealloc</li>
-          <li>Made asynchronous loader</li>
-          <li>Removed all windows from window list</li>
-          <li>Fixed the static window list</li>
-          <li>Made code remove year from end of filename before using it as title</li>
-          <li>Made APWriteManager progress parsing more robust</li>
-          <li>Started removing episode from tagChimp search result when there is no season number and episode is 0 to compensate for tagChimp bug</li>
-          <li>Made read-only / pseudo tags like chapter names raise an exception when being set</li>
-          <li>Fixed apply result chapter name bug</li>
-          <li>Began parsing more of the ratings gotten from Amazon [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/14">14</a>]</li>
-          <li>Redirected stdout to log file</li>
-          <li>Changed hasChapters in MZSearchResult to return NSMultipleValuesMarker when there are only chapter names</li>
-          <li>Added program name to program debug output</li>
-          <li>Disabled title in default tv show search profile</li>
-          <li>Removed search update delay</li>
-          <li>Added full keypath support to NSUserDefaults</li>
-          <li>Added key and keypath getters with default value to NSUserDefaults</li>
-          <li>Fixed Search profile enable preferences bug</li>
-          <li>Added track and disc read/write capability to AtomicParsley plugin [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/8">8</a>]</li>
-          <li>Added preference for disabling automatic search [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/4">4</a>]</li>
-          <li>Fixed 'Writing fails when setting non-string tags to nil' [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/16">16</a>]</li>
-          <li>Added tool tip for enable auto-search preference</li>
-          <li>Forced editing to be confirmed when loading a new file [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/7">7</a>]</li>
-          <li>Made program wait for queue cancel to finish before terminating [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/3">3</a>]</li>
-          <li>Updated build instructions and changed project so git doesn't have to be installed in /opt/local/bin</li>
-          <li>Made some of MZTag thread-safe</li>
-          <li>Moved logging defines to MZLogger.h</li>
-          <li>Added a NSTask wrapper that extends NSOperation</li>
-          <li>Changed some code to use CFBundle instead of NSBundle because of thread safety</li>
-          <li>Made Amazon search perform a bit more like tagChimp search</li>
-          <li>Added title back to default search terms for tv shows</li>
-          <li>Made plugin load api async</li>
-          <li>Added load and save NSOperationQueue's to PluginController</li>
-          <li>Added output parse task class</li>
-          <li>Added class that can control multiple NSOperation objects</li>
-          <li>Changed AtomicParsley plugin to use async loading</li>
-          <li>Renamed MZDataWriteController to MZDataController</li>
-          <li>Added progress indicator for loading</li>
-          <li>Refactored the write process to use NSTaskOperations</li>
-          <li>Replaced all calls to NSFileManager defaultManager with one that creates a new NSFileManager</li>
-          <li>Moved the responsibility of removing the temp file from plugin to MZWriteQueueStatus</li>
-          <li>Moved APReadOperationController to framework</li>
-          <li>Made plugin for TheTVDB [<a href="http://metaz.lighthouseapp.com/projects/43700/tickets/1">1</a>]</li>
-          <li>Changed how headers are found so there can be two with name Access.h</li>
-          <li>Changed a lot of header references from quoted form to angle-bracket form</li>
-          <li>Stopped PosterView from beeping when pressing enter is a valid key stroke</li>
-          <li>Added tag definitions for IMDB, ASIN, dvd season and dvd episode</li>
-          <li>Renamed isFinished and isExecuting properties to finished and executing respectively</li>
-          <li>Made finished and executing also send change notifications for "isFinished" and "isExecuting" since NSOperation dependencies uses these</li>
-          <li>Added search queue to plugin controller</li>
-          <li>Split MZRESTSearch into classes MZRESTOperation, MZRESTSearch and MZRESTSearchResult</li>
-          <li>Added statusCode property to REST wrapper so we can ignore data when not relevant</li>
-          <li>Removed non working code that scheduled REST wrapper on main runloop and made code always send request from main thread</li>
-          <li>Made accessing the operations queue for MZRemoteData thread-safe</li>
-          <li>Reordered code for AtomicParsley data read operations so they now are in sequence</li>
-          <li>Deleted a lot of unused code en TCSearch</li>
-          <li>Made loadData call in MZRemoteData detect and always start the load en on the main thread</li>
-          <li>Added links to Lighthouse to the help menu</li>
-          <li>Stopped using copies of strings for url encoding in rest wrapper</li>
-          <li>Added plugin enable/disable functionality and put UI for it in preferences</li>
-          <li>Added bundle property to MZPlugin</li>
-          <li>Fixed small problem in plugin label where TheTVDB got the label "TheTVD B"</li>
-          <li>Removed delete button from plugins preferences</li>
-          <li>Changed initialize methods to work the right way</li>
-          <li>Added some more debug log statements for searches</li>
-          <li>Added call waitUntilFinished to MZOperationsController and MZRESTOperation</li>
-          <li>Fixed race condition in search were controller was released before search completed</li>
-          <li>Fixed bug in apply search result where chapter name is always set</li>
-          <li>Fixed bug where queue run did not finish properly</li>
-          <li>Changed mp4chaps to not fail when removing non-existing chapters from file</li>
-          <li>Fixed bug where empty chapters array made write fail</li>
-          <li>Added preference to specify what to do when put in trash fails</li>
-          <li>Default to keeping the old file for above preference</li>
-          <li>Changed keep functionality to rename the old file to filename+" Backup" so it's out of the way and we can rename the new file</li>
-          <li>Reversed button positions for prompt alert for put in trash so that keep is the default option</li>
-          <li>Added debug output to print command and arguments for all tasks</li>
-          <li>Fixed trackNum bug so that now the episode no is actually written to track num</li>
-          <li>Fixed bug where cancel was not handled properly in writing operations</li>
-          <li>Added an artist value for TheTVDB results that contains the show name</li>
-          <li>Moved loading of NSUserDefaults factory settings to main to fix MZWriteQueue initialization</li>
-          <li>Fixed race condition in search plugins when canceling old search</li>
-          <li>Improved response time in UI when selecting next or previous file in list and auto-search is enabled</li>
-          <li>Fixed bug in the write cleanup code that caused file to not be moved to its final location when move to trash succeeded</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'><a name="version-1.0a5"><b>Changes in version 1.0a5</b></a></td>
-    </tr>
-    <tr class='contents'>
-      <td>
-      <p>Made the following changes:</p>
-      <ul>
-        <li>Chapter copy/paste</li>
-        <li>Progressbar on dock icon</li>
-        <li>Termination confirmations</li>
-        <li>Added a great deal of keyboard shortcuts</li>
-      </ul>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'><a name="version-0.8a"><b>Changes in version 0.8a</b></a></td>
-    </tr>
-    <tr class='contents'>
-      <td>
-      <p>Made the following changes:</p>
-      <ul>
-        <li>Growl notifications</li>
-        <li>Undo in presets panel</li>
-        <li>Undo for multiple file selection</li>
-        <li>Added a full search result apply as proposed by Kevin Pratt</li>
-        <li>Fixed support for 64 bit MPEG4 files</li>
-        <li>Better error messages</li>
-        <li>Fixed leopard support</li>
-      </ul>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-0.7a'>
-          <b>Changes in version 0.7a</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>The new and improved version now with Amazon US searching.</p>
-        <p>Also made the following changes:</p>
-        <ul>
-          <li>Changed search profiles so that title can be disabled like other search terms</li>
-          <li>Fixed the MetaX presets video type import bug and added code to correct already imported presets</li>
-          <li>Fixed x64 empty rating bug</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-0.6a'>
-          <b>Changes in version 0.6a</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>Fixed critical queue stopping bug.</p>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-0.5a'>
-          <b>Changes in version 0.5a</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>This is a minor update that fixes a few bugs and improves the UI.</p>
-        <ul>
-          <li>Fixed a few bugs with rating and genre handling</li>
-          <li>Fixed date reading both from AtomicParsley and TagChimp</li>
-          <li>Cleaned up write queue and improved ui for status of tag write</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-0.4a'>
-          <b>Changes in version 0.4a</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>Lots of changes but to mention a few:</p>
-        <ul>
-          <li>TagChimp searching</li>
-          <li>Presets</li>
-          <li>Chapter writing</li>
-          <li>Preferences</li>
-          <li>Ratings</li>
-          <li>Genre</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-0.3a'>
-          <b>Changes in version 0.3a</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>Implemented write queue UI, drag &amp; drop, paste and services in files table.</p>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-0.2a'>
-          <b>Changes in version 0.2a</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>Version 2 for test of Sparkle update</p>
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td class='header'>
-        <a name='version-0.1a'>
-          <b>Changes in version 0.1a</b>
-        </a>
-      </td>
-    </tr>
-    <tr class='contents'>
-      <td>
-        <p>Version for test of Sparkle update</p>
-      </td>
-    </tr>
-  </table>
-</body>
+    </style>
+  </head>
+  <body>
+    
+      <article id="v1.0a14">
+        <h1>Alpha 14</h1>
+        <h3>Changes in version 1.0a14 (14. November 2013)</h3>
+
+<p>After much delay there is finally a new release of MetaZ. This release brings back <a href="http://www.themoviedb.org">TheMovieDB</a> support as well as fixes some crashing issues.</p>
+
+<p>The file list and search output have also been reversed so that files are now on the left and search is on the right (thanks to <a href="https://github.com/ipmcc" class="user-mention">@ipmcc</a>).</p>
+
+<p><strong>Please note that sadly this will also be the last release to support Leopard (OS X 10.5) and PowerPC because supporting those have become harder and harder to do for the benefit of a very tiny minority.</strong></p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Got back support for disabling plugins.</li>
+<li>Commented out the doctype in the sdef file.</li>
+<li>Added string category for wildcard matching a mime type.</li>
+<li>Added support for limiting the mime type of data in MZRemoteData.</li>
+<li>Started sometimes ignoring first chapter from tagChimp.</li>
+<li>Removed the assertion causing the crash in issue <a href="https://github.com/griff/metaz/issues/39" class="issue-link" title="Crashes when looking up data for mp4">#39</a>
+</li>
+<li>Initialized the error object to nil in MZScriptingEnums</li>
+<li>Removed unused variable</li>
+<li>Used our logger instead of NSLog</li>
+<li>Made orderedDocuments return objects in the order they are shown on screen</li>
+<li>Updated readme with description of extras</li>
+<li>Fixed problem with MZTextView reported in <a href="https://github.com/griff/metaz/issues/37" class="issue-link" title="Descriptions Issue">#37</a>
+</li>
+<li>Update README.markdown</li>
+<li>Revert "Changed open sheet to use file extensions instead of UTIs becaused it was causing problems with m4v extension"</li>
+<li>Removed output of extensions when showing open sheet</li>
+<li>Started using PlistBuddy instead of defaults to read values from plist file in scripts</li>
+<li>Moved shell scripts to Scripts folder</li>
+<li>Changed the UTI conform to requirement to kUTTypeAudiovisualContent so that we also support audio</li>
+<li>Moved document types information to data provider plugin</li>
+<li>Moved private MZPlugin category to main source file</li>
+<li>Refactored so that MZScriptActionsPlugin does not have a bundle assigned</li>
+<li>Removed unused old dataProviders and searchProviders methods from MZPlugin</li>
+<li>Changed plugin label so that it checks the bundle for a CFBundleDisplayName and a CFBundleName key in Info.plist</li>
+<li>Added accessors for plugin types that include disabled plugins</li>
+<li>Removed Test-Info.plist</li>
+<li>Added version number to settings</li>
+<li>Updated project to Xcode 5</li>
+<li>Added init script to simplify build from fresh checkout</li>
+<li>Fixed error caused by implicit conversion to CGRect.</li>
+<li>Fixed some memory leaks and semantic issues</li>
+<li>Failed writes now reports whatever is on stderr.</li>
+<li>Don't paste read only tags fixing <a href="https://github.com/griff/metaz/issues/63" class="issue-link" title="copy / paste of tags doesn't copy all tags">#63</a>
+</li>
+<li>Now defaults to getting error string from stderr</li>
+<li>Fixed problem when only removing artwork</li>
+<li>Fixed some semantic warning</li>
+<li>Added JSONKit to Externals</li>
+<li>Implemented support for the new The Movie DB API. Fixes <a href="https://github.com/griff/metaz/issues/74" class="issue-link" title="Search Results Only Include TagChimp">#74</a>.</li>
+<li>Fixes the icon for TheMovieDB results</li>
+<li>Fixed right-clicking on search results</li>
+<li>Merge branch 'feature/moviedb-fix' into develop</li>
+<li>Fixed a memory error in ChapterItemWrapper</li>
+<li>Removed unused variable</li>
+<li>Only include chapter data from tagChimp if there is more than one chapter</li>
+<li>Don't use asserts on data external to the program</li>
+<li>Removed some tagchimp debug output</li>
+<li>Made new poster backgrounds</li>
+<li>Add a user default to reverse the order of the panes in the main splitview.</li>
+<li>Bring pull request branch up to date with v1.0a13.</li>
+<li>Per discussion on pull req: Remove defaults option.</li>
+<li>Fix frame/bounds confusion</li>
+<li>Update XIB file to reflect order.</li>
+<li>Remove the code to force the reordering panes.</li>
+</ul>
+      </article>
+    
+      <article id="v1.0a13">
+        <h1>Alpha 13</h1>
+        <h3>Changes in version 1.0a13 (4. December 2012)</h3>
+
+<p>Alpha 13 optimizes the search to both make MetaZ more responsive but also to reduce the load it puts on search providers like <a href="http://www.tagchimp.com/">tagChimp</a> and <a href="http://thetvdb.com/">The TVDB</a>.</p>
+
+<p>Also improved in this release is the support for AppleScript plugins which have been reworked to have an API that more resembles folder actions and which can now be installed by simply dropping them onto the MetaZ dock icon.</p>
+
+<p>Lastly video type has been changed to reflect changes in iTunes 11 <a href="https://github.com/griff/metaz/issues/34" class="issue-link" title='Movies being tagged in iTunes as "Home Videos"'>#34</a> and to add a few new ones.</p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Finally cracked how to do pretty AppleScript event callbacks</li>
+<li>Set the allowsUndo flag on the long description text view</li>
+<li>Made own versions of NSComboBox, NSTextField and NSTextView that do not drop responder status after editing ends</li>
+<li>Moved next file and previous file menus</li>
+<li>Removed selectNextFile and selectPreviousFile from AppController and hooked the menus directly up to the files controller</li>
+<li>Renamed document related applescript queue events</li>
+<li>Added an opened document applescript event</li>
+<li>Improved Update iTunes plugin by making it look for opened files in iTunes when iTunes is running</li>
+<li>Moved some code around so that now search is more isolated from the rest</li>
+<li>Fixed error in The TVDB search where it failed when tv show name was empty</li>
+<li>Fixed regression where search could not be started from search field</li>
+<li>Fixed image loading retry related crash <a href="https://github.com/griff/metaz/issues/26" class="issue-link" title="MetaZ crashes">#26</a>
+</li>
+<li>Optimized automatic search by checking and only doing the search when the terms have actually changed</li>
+<li>Made all search plugins process the response in the background</li>
+<li>Fixed problem with search not always getting reported as finished. Caused by ASIHTTPRequest not calling delegate methods when request was canceled before it was started.</li>
+<li>Released search delegate when request is canceled to fix problem with sometimes seing spurious search results from previous searches.</li>
+<li>Commented out a lot of logging in the search plugins because it was getting a bit spamy</li>
+<li>Set the maximum number of concurrent search operations to 12 like the remote data queue is set to.</li>
+<li>Set an error on MZRemoteData when response status code is above 399</li>
+<li>Set the max age of tagchimp responses to 120 since it does not have cache headers of its own.</li>
+<li>Added support for applescript bundle plugins</li>
+<li>Added support for installing applescript plugins by dropping them unto the app icon</li>
+<li>Delayed the window in the alert plugin.</li>
+<li>Commented out unused variables</li>
+<li>Reworked plugin architecture to move from providers to plugin base classes.</li>
+<li>Gave search provider and data provider plugins their own file extensions and UTIs</li>
+<li>Added Script Debugger template</li>
+<li>Added a property for the rearrange delay and set to to half a second by default</li>
+<li>Updated copyright year</li>
+<li>Fixed the logic for loading the plugin icon</li>
+<li>Renamed Movies and Short Film video types fixing <a href="https://github.com/griff/metaz/issues/34" class="issue-link" title='Movies being tagged in iTunes as "Home Videos"'>#34</a> and added new video types.</li>
+</ul>
+      </article>
+    
+      <article id="1.0a12">
+        <h1>Alpha 12</h1>
+        <h3>Changes in version 1.0a12 (6. November 2012)</h3>
+
+<p>Alpha 12 fixes the regression we had where m4v files where no longer editable <a href="https://github.com/griff/metaz/issues/27" class="issue-link" title="m4v files no longer editable by MetaZ Version 1.0a11 (12.11.02.12.6d9bdbf)">#27</a> </p>
+
+<p>Finally there is integration with iTunes and a lot of it. You can drag items from iTunes and drop them onto either the MetaZ dock icon or the files table. You can copy items from iTunes and paste them into the files table. MetaZ has a service in the Services menu of iTunes that opens the selected items in MetaZ. Two new When Done actions have been added. One of them, enabled by default, updates the file location and tells iTunes to refresh its meta data if the file was added to MetaZ using any of the above methods. The other adds any file written by MetaZ to iTunes.</p>
+
+<p>This release also contains a reworked notification / event system which is now based on plugins and brings with it support for plugins implemented in AppleScript. The two iTunes related completion actions are in fact implemented in AppleScript. Though the process for doing so is currently a bit involved it should be possible for you to make your own plugins in AppleScript.</p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Forgot to change UTIs in APDataProvider when moving away from our own UTI for m4v files <a href="https://github.com/griff/metaz/issues/27" class="issue-link" title="m4v files no longer editable by MetaZ Version 1.0a11 (12.11.02.12.6d9bdbf)">#27</a>
+</li>
+<li>Added our own array controller with delayed rearrangement and enabled automaticallyRearrangesObjects for files</li>
+<li>Generalized SearchTableView menuForEvent, moved it to UndoTableView and deleted SearchTableView</li>
+<li>Fixed spelling error in MZPresets</li>
+<li>Removed commented out code</li>
+<li>Switched usages of getBytes: in MZScriptingAdditions to getBytes:length: since that is not deprecated and safer</li>
+<li>Added NSDecimal support to NSValue</li>
+<li>Made NSDecimal support in scripting objectValue use decimalValue which coerces</li>
+<li>Added support for alias to scripting objectValue</li>
+<li>Added iTunesPersistentID tag</li>
+<li>Made allKnownTags return all registered tags</li>
+<li>Switched CFBundleVersion of plugins to BUILDVERSION</li>
+<li>Added applescript access to documents in queue</li>
+<li>Added faster access to applescript tags</li>
+<li>Removed some unused code</li>
+<li>Added support for passing initial metadata along when loading files</li>
+<li>Added some paths to Xcode groups</li>
+<li>Fixed problem with plugin label was prefixed with a whitespace</li>
+<li>Retained the bundle for the plugin</li>
+<li>Added an identifier property to MZPlugin</li>
+<li>Removed whitespace</li>
+<li>Added category to create NSError from apple script error dictionary</li>
+<li>Made selectedDocuments always return an array</li>
+<li>Added support for apple script and action only plugins</li>
+<li>Added support for receiving drag and drop and pasting from iTunes as well as refreshing iTunes metadata after write</li>
+<li>Merge branch 'feature/scriptactions' into develop</li>
+<li>Fixed enabling of actions plugins</li>
+<li>Fixed wrong variable name</li>
+<li>Changed queue so status is stopping until notifications have been sent</li>
+<li>Prevented app from quitting while queue is stopping</li>
+<li>Moved enabled property in MZPlugin from private to public API</li>
+<li>Fixed plugin label prepending a whitespace when class name is only one word</li>
+<li>Added a delayed quit to scripting dictionary</li>
+<li>Moved to a "when done" system based entirely on actions plugins</li>
+<li>Added an \"add to iTunes\" plugin fixing <a href="https://github.com/griff/metaz/issues/18" class="issue-link" title="auto add to itunes would be a nice feature">#18</a>
+</li>
+</ul>
+      </article>
+    
+      <article id="1.0a11">
+        <h1>Alpha 11</h1>
+        <h3>Changes in version 1.0a11 (2. November 2012)</h3>
+
+<p>Alpha 10 had a major crashing issue that this release fixes.</p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Fixed sparkle signature generation and moved zip creation to make_diskimage.bash</li>
+<li>Removed save option parameter from quit command</li>
+<li>Added single index remove method for files array to MZMetaLoaded</li>
+<li>Added files insert method to make MZMetaLoader mutable key/value compliant for files</li>
+<li>Added release of scriptCommand to MZLoadOperation dealloc fixing a memory leak</li>
+<li>Retained edits and errors in MZLoadOperation fixing <a href="https://github.com/griff/metaz/issues/26" class="issue-link" title="MetaZ crashes">#26</a>
+</li>
+</ul>
+      </article>
+    
+      <article id="1.0a10">
+        <h1>Alpha 10</h1>
+        <h3>Changes in version 1.0a10</h3>
+
+<p>Long overdue Alpha 10 of MetaZ fixes the problem with adding images that slipped into Alpha 9.</p>
+
+<p>It also fixes issues with TagChimp results sometimes not getting shown and limits the number of concurrent poster downloads to 12 so as not to overload the CPU and internet connection when dealing with large number of posters.</p>
+
+<p>MetaZ now has basic AppleScript support so that you can open files and modify tags from a script.</p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Fixed editable issue in the poster control <a href="https://github.com/griff/metaz/issues/4" class="issue-link" title="Custom Cover Art">#4</a>
+</li>
+<li>Removed MZRetain, MZRelease &amp; MZCopyDescription because CF* ones works as well</li>
+<li>Added AEVTBuilder to externals</li>
+<li>Moved release related shell scripts out of xcode project to external files</li>
+<li>Removed gitattributes</li>
+<li>Moved away from out own custom uti for m4v files since that was causing problems of its own</li>
+<li>Added pragma mark to MZFileNameTextStorage</li>
+<li>Added a script name property to MZTag</li>
+<li>Added applescript record converter to MZTimeCode</li>
+<li>Added basic AppleScript support</li>
+<li>Added some test applescripts</li>
+<li>Merge pull request <a href="https://github.com/griff/metaz/pull/23" class="issue-link" title="Fix compiler/linker warnings">#23</a> from <a href="https://github.com/slessard/metaz/commit/11cb05ba72bf165649fe64e2f9689e58afc30348" class="commit-link">slessard@<tt>11cb05b</tt></a>
+</li>
+<li>Removed gitattributes</li>
+<li>Moved release related shell scripts out of xcode project to external files</li>
+<li>Moved away from out own custom uti for m4v files since that was causing problems of its own</li>
+<li>Fixed small memory leak in ToolTipButton</li>
+<li>Added getters for values, value names and localized value names of MZEnumTags</li>
+<li>Added helpers to make converting and supporting apple script easier</li>
+<li>Finished implementation of open command</li>
+<li>Finished the rough first version of applescript support</li>
+<li>Added class description comment to MZDateFormatter.h</li>
+<li>Fixed a small issue with pictureChanged value being wrong when app first starts because of NIB load order</li>
+<li>Limited the number of concurrent MZRemoteData operations to 12</li>
+<li>Fixed encoding problem in TagChimp search result</li>
+<li>Merge branch 'feature/applescript' into develop</li>
+<li>Moved selection down in file MetaZApplication to get rid of warning</li>
+<li>Changed tag value method a bit to get rid of warning</li>
+<li>Updated Bundle Version to include git commit hash</li>
+<li>Updated copyright year in Info.plist</li>
+<li>Removed SmartCrashReports keys from Info.plist since they are not used</li>
+<li>Added missing MZTimeCode.h import to MetaData.h</li>
+<li>Fixed a few memory leaks</li>
+<li>Fixed some problems in the sparkle_sign script</li>
+<li>Changed release shell scripts to use bash instead of sh</li>
+<li>Bumped version to 1.0a10</li>
+<li>Changed sparkle:version to CFBundleVersion from Info.plist</li>
+<li>Merge branch 'release/1.0a10'</li>
+<li>Fix several compiler/linker warnings/errors</li>
+</ul>
+      </article>
+    
+      <article id="1.0a9">
+        <h1>Alpha 9</h1>
+        <h3>Changes in version 1.0a9</h3>
+
+<p>By request we are pleased to release Alpha 9 of MetaZ that brings with it a whole host of bug fixes and some exciting new features.</p>
+
+<p>First off TheTVDB searching now retrieves season posters and UI is improved to let you select the one you prefer from all available posters.</p>
+
+<p>A plugin for searching TheMovieDb.org has been added, greatly improving the ease with which movies can be tagged.</p>
+
+<p>All searching now supports caching which should bring with it some speed improvements.</p>
+
+<p>On the downside the Amazon plugin has been temporarily removed because it has been broken since october and we haven't gotten around to fixing it yet.</p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Changed Sparkle url and switched on system profile</li>
+<li>Updated growl and switched to a MultiGrowl approach for loading it so we can support both mist and legacy</li>
+<li>Changed default time zone to UTC</li>
+<li>Added TheMovieDb searching</li>
+<li>Fixed problem in mp4chaps that caused it to crash with some files</li>
+<li>Added a filename changed checkbox to files table and got revertChanged to work on files table</li>
+<li>Changed status column to a dot like Mail</li>
+<li>Added support for two ISO 8601 date formats <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/39">#39</a> to all date fields; 2008-07-19 and 2008-07-19T00:00:00Z</li>
+<li>Fixed apply search result to now use the picture selected in ui</li>
+<li>Fixed encoding problems in search results</li>
+<li>Added posters support to TheTVDB search plugin</li>
+<li>Added support for array of pictures to PictureEditor</li>
+<li>Fixed index error in MZFileNameTextStorage</li>
+<li>Changed TheTVDB search to use full series files</li>
+<li>Switched all http requests to ASIHttpRequest which means caching support</li>
+<li>Changed progress bar on main window to appear with an animation and not modify the window size</li>
+<li>Switched to MGViewAnimation</li>
+<li>Reworked credits to make it clearer when contributer is there because we simply used their code ie. they are not associated with or endorse MetaZ</li>
+<li>Cleaned up code the hides and shows main window progress bar and made it a little more robust</li>
+<li>Fixed dock icon file drop</li>
+</ul>
+      </article>
+    
+      <article id="1.0a8">
+        <h1>Alpha 8</h1>
+        <h3>Changes in version 1.0a8</h3>
+
+<p>After a long hiatus MetaZ is back with a new release that fixes issues with Lion and Power PC as well as support for having only the year as release date.</p>
+
+<p>We also now have an icon of our very own. Donated by <a href="http://www.partout.info">Thomas Jakobi</a></p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Made files table and presets table ignore newlines and reverse editing on escape</li>
+<li>Changed how words are defined for file name editing so it behaves more like renaming files in Finder (e.g. dot is a word separator)</li>
+<li>Fixed doubleClickAtIndex for file name editing</li>
+<li>Commit the edit before doing a search.</li>
+<li>Fixed small bug in picture context menu where show image editor option was disabled when picture was a RemoteData</li>
+<li>Added option to cancel editing by typing esc. for all UndoTableViews</li>
+<li>Changed MZDynamicObject so that it doesn't use NSInvocation when being called from getValueForKey and setValue:forKey</li>
+<li>Made identifier, localizedName and editorCell for class MZTag into properties</li>
+<li>Fixed small issue in MZPriorObserverFix that caused a great deal of unresponsiveness</li>
+<li>Added missing call to delegate dataProvider:controller:writeStartedForEdits: in APDataProvider</li>
+<li>Added hidden start column to chapter editor</li>
+<li>Added column menu to chapter editor</li>
+<li>Changed some getters into properties</li>
+<li>Added compare method to MZTimeCode</li>
+<li>Fixed small issue in web chapter parsing where chapters that lasted less than a minute were not supported</li>
+<li>Fixed chapter edit undo <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/12">#12</a>
+</li>
+<li>Changed the rename preset undo action to "Rename Preset"</li>
+<li>Changed some privat class categories to extensions</li>
+<li>Changed building.txt to a README</li>
+<li>Added our TheTVDB API key to repository.</li>
+<li>Fixed return warning in MetaEdits</li>
+<li>Fixed tvdb view in browser and added menu items for view episode and view season</li>
+<li>Did a Build and Analyze and fixed the found problems</li>
+<li>Added fix for calling shell scripts in MZTaskOperation that messed with stdout</li>
+<li>Added icon from Thomas Jakobi</li>
+<li>Set new icon in Info.plist</li>
+<li>Updated mp4chaps to trunk-r479 and fixed missing ppc architecture <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/22">#22</a> <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/23">#23</a>
+</li>
+<li>Lion issues should now be fixed <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/31">#31</a>
+</li>
+<li>Changed tagchimp hostname from <a href="http://www.tagchimp.com">www.tagchimp.com</a> to tagchimp.com because that is the CN in their certificate hopefully fixing <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/27">#27</a>
+</li>
+<li>Fixed <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/29">#29</a> so now main window reopens when dropping a file or using open from main menu"</li>
+<li>Fixed memory problem in open that caused a crash because dictionary was released to early</li>
+<li>Changed open sheet to use file extensions instead of UTIs becaused it was causing problems with m4v extension <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/31">#31</a>
+</li>
+<li>Changed small program icon used in search result to the new MetaZ icon</li>
+<li>Added icon credit</li>
+<li>Created my own DateFormatter to fix nil bug <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/9">#9</a>
+</li>
+<li>Added a new category with a method for checking if all chars in a string are part of a given NSCharacterSet</li>
+<li>Added support for having only the year in date tag</li>
+</ul>
+      </article>
+    
+      <article id="1.0a7">
+        <h1>Alpha 7</h1>
+        <h3>Changes in version 1.0a7</h3>
+
+<p>Fixed problem with empty tagchimp result causing a crash</p>
+      </article>
+    
+      <article id="1.0a6">
+        <h1>Alpha 6</h1>
+        <h3>Changes in version 1.0a6</h3>
+
+<p>After a long wait finally a new version is ready for test.</p>
+
+<p>We have fixed a great number of bugs and made lots of little improvements but the biggest two things are: the addition of a plugin for searching <a href="http://www.thetvdb.com/">TheTVDB</a> and that loading of files is now done asynchronous with a progress indicator.</p>
+
+<p>The complete list of changes are:</p>
+
+<ul>
+<li>Fixed bug so that when keeping temporary file used when writing a move error doesn't occur</li>
+<li>Fixed bug so that now a queue item is marked as completed even when move or remove of temp file fails</li>
+<li>Fixed bug dock icon progressbar hidden state</li>
+<li>Added a whitespace to save temp file name</li>
+<li>Changed program output logging to only occur when actual output is generated</li>
+<li>Made credits file for about box and added copyright for Nigel</li>
+<li>Changed log so that system exceptions also end up there and improved the output format</li>
+<li>Made controller actually call didLoad and willUnload in MZPlugin</li>
+<li>Fixed small memory leak in AmazonSearchProvider</li>
+<li>Added release notes link, homepage link, send feedback item (that doesn't work) and view log to help menu</li>
+<li>Fixed exception in SearchMeta dealloc</li>
+<li>Made asynchronous loader</li>
+<li>Removed all windows from window list</li>
+<li>Fixed the static window list</li>
+<li>Made code remove year from end of filename before using it as title</li>
+<li>Made APWriteManager progress parsing more robust</li>
+<li>Started removing episode from tagChimp search result when there is no season number and episode is 0 to compensate for tagChimp bug</li>
+<li>Made read-only / pseudo tags like chapter names raise an exception when being set</li>
+<li>Fixed apply result chapter name bug</li>
+<li>Began parsing more of the ratings gotten from Amazon <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/14">#14</a>
+</li>
+<li>Redirected stdout to log file</li>
+<li>Changed hasChapters in MZSearchResult to return NSMultipleValuesMarker when there are only chapter names</li>
+<li>Added program name to program debug output</li>
+<li>Disabled title in default tv show search profile</li>
+<li>Removed search update delay</li>
+<li>Added full keypath support to NSUserDefaults</li>
+<li>Added key and keypath getters with default value to NSUserDefaults</li>
+<li>Fixed Search profile enable preferences bug</li>
+<li>Added track and disc read/write capability to AtomicParsley plugin <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/8">#8</a>
+</li>
+<li>Added preference for disabling automatic search <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/4">#4</a>
+</li>
+<li>Fixed 'Writing fails when setting non-string tags to nil' <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/16">#16</a>
+</li>
+<li>Added tool tip for enable auto-search preference</li>
+<li>Forced editing to be confirmed when loading a new file <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/7">#7</a>
+</li>
+<li>Made program wait for queue cancel to finish before terminating <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/3">#3</a>
+</li>
+<li>Updated build instructions and changed project so git doesn't have to be installed in /opt/local/bin</li>
+<li>Made some of MZTag thread-safe</li>
+<li>Moved logging defines to MZLogger.h</li>
+<li>Added a NSTask wrapper that extends NSOperation</li>
+<li>Changed some code to use CFBundle instead of NSBundle because of thread safety</li>
+<li>Made Amazon search perform a bit more like tagChimp search</li>
+<li>Added title back to default search terms for tv shows</li>
+<li>Made plugin load api async</li>
+<li>Added load and save NSOperationQueue's to PluginController</li>
+<li>Added output parse task class</li>
+<li>Added class that can control multiple NSOperation objects</li>
+<li>Changed AtomicParsley plugin to use async loading</li>
+<li>Renamed MZDataWriteController to MZDataController</li>
+<li>Added progress indicator for loading</li>
+<li>Refactored the write process to use NSTaskOperations</li>
+<li>Replaced all calls to NSFileManager defaultManager with one that creates a new NSFileManager</li>
+<li>Moved the responsibility of removing the temp file from plugin to MZWriteQueueStatus</li>
+<li>Moved APReadOperationController to framework</li>
+<li>Made plugin for TheTVDB <a href="http://metaz.lighthouseapp.com/projects/43700/tickets/1">#1</a>
+</li>
+<li>Changed how headers are found so there can be two with name Access.h</li>
+<li>Changed a lot of header references from quoted form to angle-bracket form</li>
+<li>Stopped PosterView from beeping when pressing enter is a valid key stroke</li>
+<li>Added tag definitions for IMDB, ASIN, dvd season and dvd episode</li>
+<li>Renamed isFinished and isExecuting properties to finished and executing respectively</li>
+<li>Made finished and executing also send change notifications for "isFinished" and "isExecuting" since NSOperation dependencies uses these</li>
+<li>Added search queue to plugin controller</li>
+<li>Split MZRESTSearch into classes MZRESTOperation, MZRESTSearch and MZRESTSearchResult</li>
+<li>Added statusCode property to REST wrapper so we can ignore data when not relevant</li>
+<li>Removed non working code that scheduled REST wrapper on main runloop and made code always send request from main thread</li>
+<li>Made accessing the operations queue for MZRemoteData thread-safe</li>
+<li>Reordered code for AtomicParsley data read operations so they now are in sequence</li>
+<li>Deleted a lot of unused code en TCSearch</li>
+<li>Made loadData call in MZRemoteData detect and always start the load en on the main thread</li>
+<li>Added links to Lighthouse to the help menu</li>
+<li>Stopped using copies of strings for url encoding in rest wrapper</li>
+<li>Added plugin enable/disable functionality and put UI for it in preferences</li>
+<li>Added bundle property to MZPlugin</li>
+<li>Fixed small problem in plugin label where TheTVDB got the label "TheTVD B"</li>
+<li>Removed delete button from plugins preferences</li>
+<li>Changed initialize methods to work the right way</li>
+<li>Added some more debug log statements for searches</li>
+<li>Added call waitUntilFinished to MZOperationsController and MZRESTOperation</li>
+<li>Fixed race condition in search were controller was released before search completed</li>
+<li>Fixed bug in apply search result where chapter name is always set</li>
+<li>Fixed bug where queue run did not finish properly</li>
+<li>Changed mp4chaps to not fail when removing non-existing chapters from file</li>
+<li>Fixed bug where empty chapters array made write fail</li>
+<li>Added preference to specify what to do when put in trash fails</li>
+<li>Default to keeping the old file for above preference</li>
+<li>Changed keep functionality to rename the old file to filename+" Backup" so it's out of the way and we can rename the new file</li>
+<li>Reversed button positions for prompt alert for put in trash so that keep is the default option</li>
+<li>Added debug output to print command and arguments for all tasks</li>
+<li>Fixed trackNum bug so that now the episode no is actually written to track num</li>
+<li>Fixed bug where cancel was not handled properly in writing operations</li>
+<li>Added an artist value for TheTVDB results that contains the show name</li>
+<li>Moved loading of NSUserDefaults factory settings to main to fix MZWriteQueue initialization</li>
+<li>Fixed race condition in search plugins when canceling old search</li>
+<li>Improved response time in UI when selecting next or previous file in list and auto-search is enabled</li>
+<li>Fixed bug in the write cleanup code that caused file to not be moved to its final location when move to trash succeeded</li>
+</ul>
+      </article>
+    
+      <article id="1.0a5">
+        <h1>Alpha 5</h1>
+        <h3>Changes in version 1.0a5</h3>
+
+<p>Made the following changes:</p>
+
+<ul>
+<li>Chapter copy/paste</li>
+<li>Progressbar on dock icon</li>
+<li>Termination confirmations</li>
+<li>Added a great deal of keyboard shortcuts</li>
+</ul>
+      </article>
+    
+      <article id="0.8a">
+        <h1>Version 0.8a</h1>
+        <h3>Changes in version 0.8a</h3>
+
+<p>Made the following changes:</p>
+
+<ul>
+<li>Growl notifications</li>
+<li>Undo in presets panel</li>
+<li>Undo for multiple file selection</li>
+<li>Added a full search result apply as proposed by Kevin Pratt</li>
+<li>Fixed support for 64 bit MPEG4 files</li>
+<li>Better error messages</li>
+<li>Fixed leopard support</li>
+</ul>
+      </article>
+    
+      <article id="0.7a">
+        <h1>Version 0.7a</h1>
+        <h3>Changes in version 0.7a</h3>
+
+<p>The new and improved version now with Amazon US searching.</p>
+
+<p>Also made the following changes:</p>
+
+<ul>
+<li>Changed search profiles so that title can be disabled like other search terms</li>
+<li>Fixed the MetaX presets video type import bug and added code to correct already imported presets</li>
+<li>Fixed x64 empty rating bug</li>
+</ul>
+      </article>
+    
+      <article id="0.6a">
+        <h1>Version 0.6a</h1>
+        <h3>Changes in version 0.6a</h3>
+
+<p>Fixed critical queue stopping bug.</p>
+      </article>
+    
+      <article id="0.5a">
+        <h1>Version 0.5a</h1>
+        <h3>Changes in version 0.5a</h3>
+
+<p>This is a minor update that fixes a few bugs and improves the UI.</p>
+
+<ul>
+<li>Fixed a few bugs with rating and genre handling</li>
+<li>Fixed date reading both from AtomicParsley and TagChimp</li>
+<li>Cleaned up write queue and improved ui for status of tag write</li>
+</ul>
+      </article>
+    
+      <article id="0.4a">
+        <h1>Version 0.4a</h1>
+        <h3>Changes in version 0.4a</h3>
+
+<p>Lots of changes but to mention a few:</p>
+
+<ul>
+<li>TagChimp searching</li>
+<li>Presets</li>
+<li>Chapter writing</li>
+<li>Preferences</li>
+<li>Ratings</li>
+<li>Genre</li>
+</ul>
+      </article>
+    
+  </body>
 </html>
