@@ -19,6 +19,38 @@
   </head>
   <body>
     
+      <article id="v1.0a15">
+        <h1>Alpha 15</h1>
+        <h3>Changes in version 1.0a15 (27. November 2013)</h3>
+
+<p>Since the last release had a serious issue with crashing I have decided to release a new version that fixes this issue as well as a few other things.</p>
+
+<p>The only new feature is support for native OS X notifications where available as well as making those the new default notifications instead of Growl. You can still enable Growl notifications in the preferences if you prefer.</p>
+
+<p>The complete list of changes is:</p>
+
+<ul>
+<li>Made sparkle sign output a JSON document.</li>
+<li>Changed time zone to GMT-1100. Fixes <a href="https://github.com/griff/metaz/issues/32" class="issue-link" title="Video Release Date">#32</a>.</li>
+<li>Merge branch 'feature/native-notifications' into develop</li>
+<li>Removed unfinished IMDB plugin</li>
+<li>Native notifications are default when available.</li>
+<li>Added comparison helpers to MZVersion</li>
+<li>Used local variable in MZMultiGrowlWrapper singleton</li>
+<li>Fixed icon progress indicator on retina screen.</li>
+<li>Added plugin for native notifications. Fixes <a href="https://github.com/griff/metaz/issues/78" class="issue-link" title="Use OS X native notifications">#78</a>.</li>
+<li>Added a minimum OS X version check for plugins</li>
+<li>Deleted non-UTF8 chars from tagChimp results.</li>
+<li>Fixed a semantic warning</li>
+<li>Fixed archive so it only contains the app.</li>
+<li>Moved plist script into its own file.</li>
+<li>Silenced output from document_types.bash</li>
+<li>Bumped version to 1.0a15</li>
+<li>TheMovieDB plugin now checks for null. Fixes <a href="https://github.com/griff/metaz/issues/83" class="issue-link" title="uncaught exception 'NSInvalidArgumentException'">#83</a>.</li>
+<li>Merge branch 'release/1.0a14'</li>
+</ul>
+      </article>
+    
       <article id="v1.0a14">
         <h1>Alpha 14</h1>
         <h3>Changes in version 1.0a14 (14. November 2013)</h3>
