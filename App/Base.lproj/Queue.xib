@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="QueueWindowController">
+            <connections>
+                <outlet property="clearBtn" destination="277" id="294"/>
+                <outlet property="collectionView" destination="189" id="281"/>
+                <outlet property="itemsLabel" destination="288" id="295"/>
+                <outlet property="window" destination="1" id="96"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Queue" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" frameAutosaveName="queuewindow" animationBehavior="default" id="1">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="211" width="483" height="299"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="483" height="299"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView borderType="line" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="186">
+                        <rect key="frame" x="-1" y="22" width="485" height="278"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="ncP-pF-bUs">
+                            <rect key="frame" x="1" y="1" width="483" height="276"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView id="189" customClass="MyQueueCollectionView">
+                                    <rect key="frame" x="0.0" y="0.0" width="483" height="276"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <connections>
+                                        <outlet property="itemPrototype" destination="195" id="236"/>
+                                        <outlet property="queues" destination="89" id="237"/>
+                                    </connections>
+                                </customView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="188">
+                            <rect key="frame" x="1" y="243" width="468" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="187">
+                            <rect key="frame" x="469" y="1" width="15" height="242"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button toolTip="Remove completed and stopped items from this list." verticalHuggingPriority="750" imageHugsTitle="YES" id="277">
+                        <rect key="frame" x="6" y="2" width="40" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" title="Clear" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="278">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="removeCompleted:" target="93" id="279"/>
+                            <binding destination="93" name="enabled" keyPath="completedItems.@count" id="283"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" id="288">
+                        <rect key="frame" x="171" y="4" width="141" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="99 item(s)" bezelStyle="round" id="289">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="93" name="displayPatternValue1" keyPath="queueItems.@count" id="293">
+                                <dictionary key="options">
+                                    <string key="NSDisplayPattern">%{value1}@ item(s)</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="33AEE7F2-B9AB-4D7C-AED1-82BDD1D82C83" displayMode="iconAndLabel" sizeMode="regular" id="3">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSeparatorItem" id="6"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="8"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="9"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarCustomizeToolbarItem" id="10"/>
+                    <toolbarItem implicitItemIdentifier="ADFAD099-D745-4D4D-AA0F-B8F4296A6882" label="Start" paletteLabel="Start/Cancel" tag="-1" image="Play" id="11">
+                        <connections>
+                            <action selector="startStopEncoding:" target="-2" id="13"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="11"/>
+                </defaultToolbarItems>
+            </toolbar>
+        </window>
+        <box autoresizesSubviews="NO" boxType="custom" borderType="line" title="Box" titlePosition="noTitle" transparent="YES" id="199" userLabel="File view box" customClass="FileViewBox">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="43"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <view key="contentView" id="Oja-Vj-8sv">
+                <rect key="frame" x="1" y="1" width="312" height="41"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tabView autoresizesSubviews="NO" drawsBackground="NO" type="noTabsNoBorder" id="201">
+                        <rect key="frame" x="28" y="0.0" width="284" height="41"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="Pending" identifier="pending" id="203">
+                                <view key="view" id="204">
+                                    <rect key="frame" x="0.0" y="0.0" width="284" height="41"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" id="208">
+                                            <rect key="frame" x="0.0" y="18" width="238" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="mbdump.tar.bz2" id="209">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="195" name="value" keyPath="representedObject.edits.fileName" id="254">
+                                                    <dictionary key="options">
+                                                        <integer key="NSConditionallySetsHidden" value="1"/>
+                                                        <integer key="NSContinuouslyUpdatesValue" value="1"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="206" customClass="ToolTipLabel">
+                                            <rect key="frame" x="0.0" y="6" width="239" height="11"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="503 of 575 MB - stopped" id="211">
+                                                <font key="font" metaFont="miniSystem"/>
+                                                <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="195" name="value" keyPath="representedObject.status" id="287"/>
+                                            </connections>
+                                        </textField>
+                                        <button toolTip="Show in Finder" imageHugsTitle="YES" id="207" customClass="ToolTipButton">
+                                            <rect key="frame" x="256" y="14" width="15" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Reveal" imagePosition="overlaps" alignment="left" alternateImage="RevealOn" inset="2" id="210">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="revealItem:" target="199" id="272"/>
+                                                <outlet property="label" destination="206" id="298"/>
+                                            </connections>
+                                        </button>
+                                        <button toolTip="Stop writing" imageHugsTitle="YES" id="205" customClass="ToolTipButton">
+                                            <rect key="frame" x="237" y="14" width="15" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="StopProgress" imagePosition="overlaps" alignment="left" alternateImage="StopProgressOn" imageScaling="proportionallyDown" inset="2" id="212">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="removeItem:" target="199" id="241"/>
+                                                <binding destination="195" name="hidden" keyPath="representedObject.completed" id="303"/>
+                                                <outlet property="label" destination="206" id="299"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Action" identifier="action" id="202">
+                                <view key="view" id="213">
+                                    <rect key="frame" x="0.0" y="0.0" width="284" height="41"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" id="218">
+                                            <rect key="frame" x="0.0" y="23" width="238" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="mbdump.tar.bz2" id="219">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="195" name="value" keyPath="representedObject.edits.fileName" id="255">
+                                                    <dictionary key="options">
+                                                        <integer key="NSConditionallySetsHidden" value="1"/>
+                                                        <integer key="NSContinuouslyUpdatesValue" value="1"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <progressIndicator wantsLayer="YES" verticalHuggingPriority="750" maxValue="100" bezeled="NO" controlSize="small" style="bar" id="217">
+                                            <rect key="frame" x="0.0" y="7" width="233" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <connections>
+                                                <binding destination="195" name="value" keyPath="representedObject.percent" id="258"/>
+                                            </connections>
+                                        </progressIndicator>
+                                        <textField verticalHuggingPriority="750" id="216" customClass="ToolTipLabel">
+                                            <rect key="frame" x="0.0" y="-7" width="238" height="11"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="503 of 575 MB - stopped" id="220">
+                                                <font key="font" metaFont="miniSystem"/>
+                                                <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="195" name="value" keyPath="representedObject.status" id="285"/>
+                                            </connections>
+                                        </textField>
+                                        <button toolTip="Show in Finder" imageHugsTitle="YES" id="215" customClass="ToolTipButton">
+                                            <rect key="frame" x="256" y="7" width="15" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Reveal" imagePosition="overlaps" alignment="left" alternateImage="RevealOn" controlSize="small" imageScaling="proportionallyDown" inset="2" id="221">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="revealItem:" target="199" id="271"/>
+                                                <outlet property="label" destination="216" id="296"/>
+                                            </connections>
+                                        </button>
+                                        <button toolTip="Stop writing" imageHugsTitle="YES" id="214" customClass="ToolTipButton">
+                                            <rect key="frame" x="237" y="7" width="15" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="StopProgress" imagePosition="overlaps" alignment="left" controlSize="small" state="on" imageScaling="proportionallyDown" inset="2" id="222">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="removeItem:" target="199" id="240"/>
+                                                <binding destination="195" name="hidden" keyPath="representedObject.completed" id="302"/>
+                                                <outlet property="label" destination="216" id="297"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                        <connections>
+                            <binding destination="195" name="selectedIndex" keyPath="representedObject.writing" id="260"/>
+                            <outlet property="delegate" destination="-2" id="280"/>
+                        </connections>
+                    </tabView>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" imageHugsTitle="YES" id="200">
+                        <rect key="frame" x="7" y="9" width="13" height="13"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="disclosureTriangle" bezelStyle="disclosure" imagePosition="above" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="223">
+                            <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="switchDetails:" target="199" id="270"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+            <connections>
+                <outlet property="disclosure" destination="200" id="224"/>
+                <outlet property="label" destination="218" id="226"/>
+                <outlet property="tabView" destination="201" id="225"/>
+            </connections>
+        </box>
+        <customObject id="93" customClass="MZWriteQueue"/>
+        <arrayController avoidsEmptySelection="NO" id="89">
+            <declaredKeys>
+                <string>fileName</string>
+                <string>title</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="93" name="contentArray" keyPath="queueItems" id="251"/>
+            </connections>
+        </arrayController>
+        <customObject id="195" customClass="MGCollectionViewItem">
+            <connections>
+                <outlet property="view" destination="199" id="231"/>
+            </connections>
+        </customObject>
+    </objects>
+    <resources>
+        <image name="Play" width="32" height="32"/>
+        <image name="Reveal" width="14" height="14"/>
+        <image name="RevealOn" width="14.197182655334473" height="14.197182655334473"/>
+        <image name="StopProgress" width="14" height="14"/>
+        <image name="StopProgressOn" width="14" height="14"/>
+    </resources>
+</document>

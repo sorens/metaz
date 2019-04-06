@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ImageWindowController">
+            <connections>
+                <outlet property="imageView" destination="64" id="68"/>
+                <outlet property="moveSelectTool" destination="45" id="57"/>
+                <outlet property="selectMenu" destination="48" id="56"/>
+                <outlet property="window" destination="1" id="4"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Edit Image" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" frameAutosaveName="imageedit" animationBehavior="default" id="1">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="35" width="567" height="475"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="567" height="475"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="61">
+                        <rect key="frame" x="-1" y="-1" width="569" height="477"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="btF-fw-HYb">
+                            <rect key="frame" x="1" y="1" width="552" height="460"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView id="64" customClass="IKImageView">
+                                    <rect key="frame" x="0.0" y="0.0" width="552" height="460"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </customView>
+                            </subviews>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="63">
+                            <rect key="frame" x="1" y="461" width="552" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="62">
+                            <rect key="frame" x="553" y="1" width="15" height="460"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="3B9F2AA8-17D0-4A7E-9EDA-6A1F14795701" displayMode="iconAndLabel" sizeMode="regular" id="6">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSeparatorItem" id="9"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="11"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="12"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarCustomizeToolbarItem" id="13"/>
+                    <toolbarItem implicitItemIdentifier="CA21457B-2A04-498F-923E-764B917546F1" label="Move Select" paletteLabel="Move Select" id="47">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="71" height="23"/>
+                        <size key="maxSize" width="71" height="23"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="45">
+                            <rect key="frame" x="0.0" y="14" width="71" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" state="on" borderStyle="border" alignment="left" segmentDistribution="fill" style="capsule" trackingMode="selectOne" id="46">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment toolTip="Move" width="32" selected="YES"/>
+                                    <segment toolTip="Select" width="32" tag="1"/>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
+                        <connections>
+                            <action selector="moveSelect:" target="-2" id="82"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="D27C3BC3-7E83-4C0F-889A-DAE7641F4BBB" label="Actual Size" paletteLabel="Actual Size" tag="-1" image="ZoomActualSize" id="69">
+                        <connections>
+                            <action selector="zoomImageToActualSize:" target="64" id="80"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="8D00DC81-7C49-4CCC-8EEC-0EAB225EADA9" label="Size to Fit" paletteLabel="Size to Fit" tag="-1" image="SizeToFit" id="73">
+                        <connections>
+                            <action selector="zoomImageToFit:" target="64" id="79"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="95DCDDDF-F79B-42D7-B104-E87DA679C843" label="Zoom In" paletteLabel="Zoom In" tag="-1" image="ZoomIn" id="70">
+                        <connections>
+                            <action selector="zoomIn:" target="64" id="78"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C1B13DF8-F450-4007-82DF-4077458314CE" label="Zoom Out" paletteLabel="Zoom Out" tag="-1" image="ZoomOut" id="71">
+                        <connections>
+                            <action selector="zoomOut:" target="64" id="77"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="EE2AF0A5-DC3D-450E-98D3-23B50DD9891C" label="Rotate Left" paletteLabel="Rotate Left" tag="-1" image="RotateLeft" id="72">
+                        <connections>
+                            <action selector="rotateImageLeft:" target="64" id="76"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="65D67001-015A-46F0-BD13-51401D3A4C18" label="Rotate Right" paletteLabel="Rotate Right" tag="-1" image="RotateRight" id="74">
+                        <connections>
+                            <action selector="rotateImageRight:" target="64" id="75"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="BE727D17-0C92-43E0-98B4-2A201E1308A3" label="Crop" paletteLabel="Crop" tag="-1" id="88">
+                        <connections>
+                            <action selector="crop:" target="-2" id="89"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="69"/>
+                    <toolbarItem reference="73"/>
+                    <toolbarItem reference="71"/>
+                    <toolbarItem reference="70"/>
+                    <toolbarItem reference="74"/>
+                    <toolbarItem reference="72"/>
+                    <toolbarItem reference="9"/>
+                    <toolbarItem reference="88"/>
+                    <toolbarItem reference="47"/>
+                </defaultToolbarItems>
+            </toolbar>
+        </window>
+        <menu id="48">
+            <items>
+                <menuItem title="Regtangular Selection" state="on" id="49">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="selectRectangle:" target="-2" id="83"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Elliptical Selection" id="50">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="selectEllipse:" target="-2" id="84"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Lasso Selection" id="51">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="selectLasso:" target="-2" id="85"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+    <resources>
+        <image name="RotateLeft" width="32" height="32"/>
+        <image name="RotateRight" width="32" height="32"/>
+        <image name="SizeToFit" width="32" height="32"/>
+        <image name="ZoomActualSize" width="32" height="32"/>
+        <image name="ZoomIn" width="32" height="32"/>
+        <image name="ZoomOut" width="32" height="32"/>
+    </resources>
+</document>

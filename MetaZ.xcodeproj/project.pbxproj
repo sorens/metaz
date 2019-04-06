@@ -514,7 +514,6 @@
 		1B0DEC3E10607A9A009D293F /* MGCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCollectionView.m; sourceTree = "<group>"; };
 		1B0DEDD61060F7B6009D293F /* ImageWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageWindowController.h; sourceTree = "<group>"; };
 		1B0DEDD71060F7B6009D293F /* ImageWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageWindowController.m; sourceTree = "<group>"; };
-		1B0DEDDA10610132009D293F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = App/English.lproj/ImageEdit.xib; sourceTree = "<group>"; };
 		1B0DEDDF10610412009D293F /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		1B0DEEB8106139E8009D293F /* RotateLeft.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = RotateLeft.tif; path = App/resources/RotateLeft.tif; sourceTree = SOURCE_ROOT; };
 		1B0DEEB9106139E8009D293F /* RotateRight.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = RotateRight.tif; path = App/resources/RotateRight.tif; sourceTree = SOURCE_ROOT; };
@@ -543,7 +542,6 @@
 		1B11A28A104DF1EC004C93D3 /* FilesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableView.m; sourceTree = "<group>"; };
 		1B11A47C104E627F004C93D3 /* MZConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZConstants.h; sourceTree = "<group>"; };
 		1B11A47D104E627F004C93D3 /* MZConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZConstants.m; sourceTree = "<group>"; };
-		1B20209A10B36EC200EE548A /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Framework/English.lproj/VideoType.strings; sourceTree = "<group>"; };
 		1B26B816164ACE1200238517 /* SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
 		1B26B817164ACE1200238517 /* SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
 		1B26B88B164B1EEB00238517 /* MZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTextView.h; sourceTree = "<group>"; };
@@ -577,7 +575,6 @@
 		1B31C2F3165371BD00853E10 /* MZApplyEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZApplyEditor.h; sourceTree = "<group>"; };
 		1B31C30E165378CE00853E10 /* PicturesArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesArrayController.h; sourceTree = "<group>"; };
 		1B31C30F165378CE00853E10 /* PicturesArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesArrayController.m; sourceTree = "<group>"; };
-		1B31C37D16538DC300853E10 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = App/English.lproj/SearchView.xib; sourceTree = "<group>"; };
 		1B35446815B1D96B0033DD74 /* MetaZ.sdef */ = {isa = PBXFileReference; explicitFileType = text.xml; fileEncoding = 4; name = MetaZ.sdef; path = App/resources/MetaZ.sdef; sourceTree = "<group>"; };
 		1B3544E615B2160F0033DD74 /* MetaZApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaZApplication.h; sourceTree = "<group>"; };
 		1B3544E715B2160F0033DD74 /* MetaZApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaZApplication.m; sourceTree = "<group>"; };
@@ -597,7 +594,6 @@
 		1B3AD7F2110595C300B33F85 /* NSString+TempFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TempFile.m"; sourceTree = "<group>"; };
 		1B42F21A10DD5D5D00AFEBF6 /* UKDockProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UKDockProgressIndicator.h; path = Externals/UKDockProgressIndicator/UKDockProgressIndicator.h; sourceTree = "<group>"; };
 		1B42F21B10DD5D5D00AFEBF6 /* UKDockProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UKDockProgressIndicator.m; path = Externals/UKDockProgressIndicator/UKDockProgressIndicator.m; sourceTree = "<group>"; };
-		1B42F21E10DD5D6D00AFEBF6 /* English */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = English; path = Externals/UKDockProgressIndicator/English.lproj/MiniProgressGradient.png; sourceTree = "<group>"; };
 		1B44949810D57D6900B9C751 /* AtomicParsley */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = AtomicParsley; sourceTree = "<group>"; };
 		1B4494BC10D584E000B9C751 /* next_release.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = next_release.txt; path = Release/next_release.txt; sourceTree = "<group>"; };
 		1B4499D010D9A5CE00B9C751 /* PresetSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetSegmentedControl.h; sourceTree = "<group>"; };
@@ -729,14 +725,10 @@
 		1B92C0A2108A23BA0057EFD7 /* NSUserDefaults+KeyPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+KeyPath.m"; sourceTree = "<group>"; };
 		1B99354E10AC818300E78D2D /* NSXMLNode+MZExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLNode+MZExtensions.h"; sourceTree = "<group>"; };
 		1B99354F10AC818300E78D2D /* NSXMLNode+MZExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+MZExtensions.m"; sourceTree = "<group>"; };
-		1B9B393E106C0FA200928C83 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = App/English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B9B3AB4106CC14B00928C83 /* MetaZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaZKit.h; sourceTree = "<group>"; };
 		1BA325C410545ACA00276F57 /* MetaZKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetaZKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA325C510545ACA00276F57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Framework/Info.plist; sourceTree = "<group>"; };
 		1BA3268210546CB500276F57 /* MetaZKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetaZKit_Prefix.pch; path = Framework/MetaZKit_Prefix.pch; sourceTree = "<group>"; };
-		1BA3269C10546EC800276F57 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = App/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1BA3269F10546F4600276F57 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = App/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1BA326A210546F9700276F57 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Framework/English.lproj/MZTags.strings; sourceTree = "<group>"; };
 		1BA326EE1054823100276F57 /* MZWriteQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZWriteQueue.h; sourceTree = "<group>"; };
 		1BA326EF1054823100276F57 /* MZWriteQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZWriteQueue.m; sourceTree = "<group>"; };
 		1BA9B579208954BA00DDC17F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
@@ -766,7 +758,6 @@
 		1BBB39A81087083600C9E17F /* MZPriorObserverFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPriorObserverFix.m; sourceTree = "<group>"; };
 		1BBC025E10FC115F001DDB1C /* MZTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTaskOperation.h; sourceTree = "<group>"; };
 		1BBC025F10FC115F001DDB1C /* MZTaskOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTaskOperation.m; sourceTree = "<group>"; };
-		1BC0661810AE223A005C2A9F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = App/English.lproj/PresetsPanel.xib; sourceTree = "<group>"; };
 		1BC0671310AE44CA005C2A9F /* presets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = presets.png; path = App/resources/presets.png; sourceTree = "<group>"; };
 		1BC256361192C183001B9E1E /* NSObject+WaitUntilChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WaitUntilChange.h"; sourceTree = "<group>"; };
 		1BC256371192C183001B9E1E /* NSObject+WaitUntilChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WaitUntilChange.m"; sourceTree = "<group>"; };
@@ -807,7 +798,6 @@
 		1BD6E751105DADCC00E40151 /* Stop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Stop.tiff; path = App/resources/Stop.tiff; sourceTree = "<group>"; };
 		1BD6E7A0105DC33400E40151 /* QueueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueController.h; sourceTree = "<group>"; };
 		1BD6E7A1105DC33400E40151 /* QueueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueController.m; sourceTree = "<group>"; };
-		1BD6E7A7105DC4D000E40151 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = App/English.lproj/Queue.xib; sourceTree = "<group>"; };
 		1BDD86A51094A8CC00E3C81D /* MZPresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPresets.h; sourceTree = "<group>"; };
 		1BDD86A61094A8CC00E3C81D /* MZPresets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPresets.m; sourceTree = "<group>"; };
 		1BDD879F1095FB5100E3C81D /* PresetsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetsWindowController.h; sourceTree = "<group>"; };
@@ -821,7 +811,6 @@
 		1BEA6D4F106E8B7C004B1A7F /* IKImageView-Missing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IKImageView-Missing.h"; sourceTree = "<group>"; };
 		1BEA6DAC106EC632004B1A7F /* MZPluginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPluginController.h; sourceTree = "<group>"; };
 		1BEA6DAD106EC632004B1A7F /* MZPluginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPluginController.m; sourceTree = "<group>"; };
-		1BEA6DD9106ED837004B1A7F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = App/English.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
 		1BEA6DDB106ED8E4004B1A7F /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		1BEA6DDC106ED8E4004B1A7F /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		1BEA6E48106EEF34004B1A7F /* MZPlugin+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MZPlugin+Private.h"; sourceTree = "<group>"; };
@@ -847,6 +836,17 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* MetaZ_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetaZ_Prefix.pch; path = App/MetaZ_Prefix.pch; sourceTree = "<group>"; };
+		61B4F371225807D1005ED11C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = App/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		61B4F372225807D2005ED11C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = App/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		61B4F378225807D2005ED11C /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = Externals/UKDockProgressIndicator/en.lproj/MiniProgressGradient.png; sourceTree = "<group>"; };
+		61B4F379225807D2005ED11C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Framework/en.lproj/MZTags.strings; sourceTree = "<group>"; };
+		61B4F37A225807D2005ED11C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Framework/en.lproj/VideoType.strings; sourceTree = "<group>"; };
+		61B4F37B225807D9005ED11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Base.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
+		61B4F37C225807D9005ED11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Base.lproj/Queue.xib; sourceTree = "<group>"; };
+		61B4F37D225807DA005ED11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Base.lproj/ImageEdit.xib; sourceTree = "<group>"; };
+		61B4F37E225807DA005ED11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		61B4F37F225807DA005ED11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Base.lproj/PresetsPanel.xib; sourceTree = "<group>"; };
+		61B4F380225807DA005ED11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Base.lproj/SearchView.xib; sourceTree = "<group>"; };
 		7F4F84D518CD1F8000D002DA /* NSString+NumericCompare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NumericCompare.h"; sourceTree = "<group>"; };
 		7F4F84D618CD1F8000D002DA /* NSString+NumericCompare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NumericCompare.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = App/Info.plist; sourceTree = "<group>"; };
@@ -2002,17 +2002,13 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1020;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MetaZ" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				da,
 				de,
 				en,
@@ -2030,6 +2026,7 @@
 				sv,
 				zh_CN,
 				zh_TW,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* MetaZ */;
 			projectDirPath = "";
@@ -2578,7 +2575,7 @@
 		1B0DEDD910610132009D293F /* ImageEdit.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B0DEDDA10610132009D293F /* English */,
+				61B4F37D225807DA005ED11C /* Base */,
 			);
 			name = ImageEdit.xib;
 			sourceTree = "<group>";
@@ -2586,7 +2583,7 @@
 		1B20209910B36EC200EE548A /* VideoType.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B20209A10B36EC200EE548A /* English */,
+				61B4F37A225807D2005ED11C /* en */,
 			);
 			name = VideoType.strings;
 			sourceTree = "<group>";
@@ -2594,7 +2591,7 @@
 		1B31C37C16538DC300853E10 /* SearchView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B31C37D16538DC300853E10 /* English */,
+				61B4F380225807DA005ED11C /* Base */,
 			);
 			name = SearchView.xib;
 			sourceTree = "<group>";
@@ -2602,7 +2599,7 @@
 		1B42F21D10DD5D6D00AFEBF6 /* MiniProgressGradient.png */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B42F21E10DD5D6D00AFEBF6 /* English */,
+				61B4F378225807D2005ED11C /* en */,
 			);
 			name = MiniProgressGradient.png;
 			sourceTree = "<group>";
@@ -2610,7 +2607,7 @@
 		1B9B393D106C0FA200928C83 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B9B393E106C0FA200928C83 /* English */,
+				61B4F372225807D2005ED11C /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2618,7 +2615,7 @@
 		1BA3269B10546EC800276F57 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BA3269C10546EC800276F57 /* English */,
+				61B4F371225807D1005ED11C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2626,7 +2623,7 @@
 		1BA3269E10546F4600276F57 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BA3269F10546F4600276F57 /* English */,
+				61B4F37E225807DA005ED11C /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -2634,7 +2631,7 @@
 		1BA326A110546F9700276F57 /* MZTags.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BA326A210546F9700276F57 /* English */,
+				61B4F379225807D2005ED11C /* en */,
 			);
 			name = MZTags.strings;
 			sourceTree = "<group>";
@@ -2642,7 +2639,7 @@
 		1BC0661710AE223A005C2A9F /* PresetsPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BC0661810AE223A005C2A9F /* English */,
+				61B4F37F225807DA005ED11C /* Base */,
 			);
 			name = PresetsPanel.xib;
 			sourceTree = "<group>";
@@ -2650,7 +2647,7 @@
 		1BD6E7A6105DC4D000E40151 /* Queue.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BD6E7A7105DC4D000E40151 /* English */,
+				61B4F37C225807D9005ED11C /* Base */,
 			);
 			name = Queue.xib;
 			sourceTree = "<group>";
@@ -2658,7 +2655,7 @@
 		1BEA6DD8106ED837004B1A7F /* PreferencesWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BEA6DD9106ED837004B1A7F /* English */,
+				61B4F37B225807D9005ED11C /* Base */,
 			);
 			name = PreferencesWindow.xib;
 			sourceTree = "<group>";
@@ -2670,6 +2667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2697,6 +2695,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -2722,6 +2721,7 @@
 		1B2022F910B393CB00EE548A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "Plist Macos";
 			};
 			name = Debug;
@@ -2729,6 +2729,7 @@
 		1B2022FA10B393CB00EE548A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "Plist Macos";
 			};
 			name = Release;
@@ -2737,9 +2738,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2755,7 +2756,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = OSXNotificationPlugin;
 				SKIP_INSTALL = YES;
@@ -2768,7 +2768,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -2783,7 +2783,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = OSXNotificationPlugin;
 				SKIP_INSTALL = YES;
@@ -2796,8 +2795,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -2812,7 +2811,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = OSXNotificationPlugin;
 				SKIP_INSTALL = YES;
@@ -2828,12 +2826,20 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2860,6 +2866,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2894,6 +2901,7 @@
 		1B44938010C95B0A00B9C751 /* Remote Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				DOCUMENTATION_FOLDER_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Documentation";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2929,6 +2937,7 @@
 		1B44938110C95B0A00B9C751 /* Remote Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/**";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2962,6 +2971,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2989,6 +2999,7 @@
 		1B44938510C95B0A00B9C751 /* Remote Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "Plist Macos";
 				SYMROOT = /Volumes/ibsoar/Documents/MetaZ;
 			};
@@ -2997,6 +3008,7 @@
 		1B4F53C6116E9F44003221B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -3024,6 +3036,7 @@
 		1B4F53C7116E9F44003221B1 /* Remote Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -3053,6 +3066,7 @@
 		1B4F53C8116E9F44003221B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/include";
@@ -3081,6 +3095,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -3110,6 +3125,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -3136,6 +3152,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3163,6 +3180,7 @@
 		1BA325C610545ACB00276F57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				DOCUMENTATION_FOLDER_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Documentation";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3198,6 +3216,7 @@
 		1BA325C710545ACB00276F57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DOCUMENTATION_FOLDER_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Documentation";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3232,9 +3251,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3250,7 +3269,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GrowlPlugin;
 				SKIP_INSTALL = YES;
@@ -3263,7 +3281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -3278,7 +3296,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GrowlPlugin;
 				SKIP_INSTALL = YES;
@@ -3291,8 +3308,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -3307,7 +3324,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GrowlPlugin;
 				SKIP_INSTALL = YES;
@@ -3321,9 +3337,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3339,7 +3355,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AlertWindowPlugin;
 				SKIP_INSTALL = YES;
@@ -3351,7 +3366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -3366,7 +3381,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AlertWindowPlugin;
 				SKIP_INSTALL = YES;
@@ -3378,8 +3392,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -3394,7 +3408,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.maven-group.metaz.plugin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AlertWindowPlugin;
 				SKIP_INSTALL = YES;
@@ -3406,6 +3419,7 @@
 		1BEA6E74106EF2A1004B1A7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/**";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3437,6 +3451,7 @@
 		1BEA6E75106EF2A1004B1A7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/**";
 				GCC_MODEL_TUNING = G5;
@@ -3468,6 +3483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3502,6 +3518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3537,12 +3554,20 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -3571,12 +3596,20 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
